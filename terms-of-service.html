@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service — Anthology Solutions Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1916; --ink-mid: #4a4840; --ink-light: #8a8880;
+      --paper: #f5f3ef; --paper-dark: #ede9e2; --rule: #d4d0c8;
+      --accent-warm: #b5460f; --white: #ffffff;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    a { color: var(--accent-warm); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; background: rgba(245,243,239,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .nav-back { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-mid); }
+    .nav-back:hover { color: var(--ink); text-decoration: none; }
+
+    .page-hero { background: var(--ink); padding: 5rem 5% 4rem; }
+    .page-hero .eyebrow { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,243,239,0.4); margin-bottom: 1.2rem; }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; color: var(--paper); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
+    .page-hero .meta { font-size: 0.82rem; font-weight: 300; color: rgba(245,243,239,0.4); }
+
+    .content-wrap { max-width: 820px; margin: 0 auto; padding: 5rem 5% 7rem; }
+
+    .intro-box {
+      background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--accent-warm);
+      padding: 1.8rem 2rem; margin-bottom: 3.5rem;
+      font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid);
+    }
+
+    .section-block { margin-bottom: 3rem; }
+    .section-block h2 {
+      font-family: var(--serif); font-size: 1.6rem; font-weight: 400;
+      color: var(--ink); margin-bottom: 0.3rem;
+      padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule);
+      display: flex; align-items: baseline; gap: 0.8rem;
+    }
+    .section-block h2 .num { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-warm); flex-shrink: 0; }
+    .section-block h3 { font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .section-block p { font-size: 0.92rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1rem; }
+    .section-block p:last-child { margin-bottom: 0; }
+    .section-block ul { list-style: none; margin: 0.8rem 0 1rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .section-block ul li { font-size: 0.92rem; font-weight: 300; line-height: 1.75; color: var(--ink-mid); display: flex; align-items: flex-start; gap: 0.8rem; }
+    .section-block ul li::before { content: '—'; color: var(--accent-warm); flex-shrink: 0; margin-top: 1px; }
+
+    .disclaimer-box {
+      background: var(--ink); color: rgba(245,243,239,0.7);
+      padding: 1.8rem 2rem; margin: 1.5rem 0;
+      font-size: 0.82rem; font-weight: 300; line-height: 1.85;
+      letter-spacing: 0.01em;
+    }
+    .disclaimer-box strong { color: var(--paper); font-weight: 500; }
+
+    .highlight-box {
+      background: var(--paper-dark); border: 1px solid var(--rule);
+      padding: 1.4rem 1.8rem; margin: 1.2rem 0;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid);
+    }
+
+    footer { background: var(--ink); padding: 2.5rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 0.75rem; font-weight: 300; color: rgba(245,243,239,0.3); }
+    .footer-right { display: flex; gap: 1.5rem; }
+    .footer-right a { font-size: 0.75rem; font-weight: 300; color: rgba(245,243,239,0.4); text-decoration: none; }
+    .footer-right a:hover { color: var(--paper); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Anthology</a>
+  <a href="index.html" class="nav-back">&#8592; Back to Home</a>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Legal</p>
+  <h1>Terms of Service</h1>
+  <p class="meta">Anthology Solutions Inc. &nbsp;·&nbsp; Effective Date: 1 January 2025 &nbsp;·&nbsp; Last Updated: 1 January 2025</p>
+</div>
+
+<div class="content-wrap">
+
+  <div class="intro-box">
+    These Terms of Service ("Terms") govern your access to and use of the website at <a href="https://www.anthology.ooo">www.anthology.ooo</a> and describe the general terms under which Anthology Solutions Inc. ("Anthology", "we", "us", or "our") provides services to clients, engages contractors, and works with candidates. Engagement with Anthology's services is also governed by the specific agreements executed between the parties, including our Master Services Agreement ("MSA"), Independent Contractor Agreement ("ICA"), and Right to Represent Agreement ("RTR"). In the event of a conflict between these Terms and an executed agreement, the executed agreement shall prevail.
+  </div>
+
+  <!-- 1 -->
+  <div class="section-block">
+    <h2><span class="num">01</span> About Anthology Solutions Inc.</h2>
+    <p>Anthology Solutions Inc. is a Texas corporation registered at 2300 Valley View Lane, Suite #538, Irving, TX 75062, USA. We provide technology services including product development, AI governance advisory, and staff augmentation. We engage both clients (organisations that procure our services) and contractors and candidates (individuals and entities that provide services through us).</p>
+    <p>Contact: <a href="tel:+12142147474">+1 (214) 214-7474</a> &nbsp;|&nbsp; <a href="https://www.anthology.ooo">www.anthology.ooo</a></p>
+  </div>
+
+  <!-- 2 -->
+  <div class="section-block">
+    <h2><span class="num">02</span> Services and Engagements</h2>
+    <h3>For Clients</h3>
+    <p>Anthology provides professional technology services to clients pursuant to a Master Services Agreement and accompanying Statements of Work ("SOW"). Each SOW sets out the specific services, deliverables, project milestones, and fees applicable to that engagement. No services will be performed without an executed agreement and SOW.</p>
+    <p>Clients are responsible for:</p>
+    <ul>
+      <li>Cooperating with Anthology and providing timely direction, materials, and access required for service delivery</li>
+      <li>Ensuring all client-provided information and materials are accurate, complete, and lawfully held</li>
+      <li>Obtaining all necessary licences and consents required in connection with the services</li>
+      <li>Paying all invoiced amounts within 30 days of receipt, in US dollars</li>
+    </ul>
+    <p>If Anthology's performance is prevented or delayed by any act or omission of the client, Anthology shall not be in breach of its obligations for any resulting delay.</p>
+
+    <h3>For Contractors</h3>
+    <p>Anthology engages independent contractors to provide services to Anthology and/or Anthology's clients pursuant to an Independent Contractor Agreement. Contractors acknowledge and agree that:</p>
+    <ul>
+      <li>They are independent contractors and not employees of Anthology or any Anthology client</li>
+      <li>They are solely responsible for all federal, state, and local taxes on fees received, including receipt of IRS Form 1099-NEC where applicable</li>
+      <li>All work product and deliverables created in the course of services are deemed work made for hire and vest in Anthology or the relevant client</li>
+      <li>They may not hold themselves out as having authority to bind Anthology or enter agreements on Anthology's behalf</li>
+    </ul>
+
+    <h3>For Candidates</h3>
+    <p>Anthology represents candidates for positions with its clients pursuant to a Right to Represent Agreement. Candidates grant Anthology the exclusive right to submit their profile to the specified client for the specified position. Candidates acknowledge that the Right to Represent Agreement does not constitute an offer of employment, and that any engagement arising from a successful placement will be on an independent contractor basis.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section-block">
+    <h2><span class="num">03</span> Fees, Payment, and Expenses</h2>
+    <p>Fees for services are set out in the applicable SOW or ICA. The following general terms apply:</p>
+    <ul>
+      <li>Invoices for time-and-materials engagements are issued monthly in arrears</li>
+      <li>Fixed-price engagements are invoiced at project milestones as set out in the SOW</li>
+      <li>All undisputed invoices are payable within 30 calendar days of receipt</li>
+      <li>All payments are in US dollars by check, wire transfer, or such other method as Anthology approves</li>
+      <li>Clients are responsible for all applicable sales, use, excise, and similar taxes on amounts payable</li>
+      <li>Contractors are solely responsible for their own travel and other costs unless otherwise specified in their ICA</li>
+    </ul>
+    <p>Anthology may terminate an engagement for non-payment where an invoice remains unpaid more than 30 days after written notice of non-payment has been provided.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section-block">
+    <h2><span class="num">04</span> Intellectual Property</h2>
+    <h3>Client Engagements (MSA)</h3>
+    <p>Subject to any supplemental terms, deliverables created by Anthology for a client under an MSA are owned by the client as work made for hire or by irrevocable assignment. Anthology and its licensors retain all rights in pre-existing materials and tools used in the delivery of services. Anthology grants clients a non-exclusive, royalty-free licence to use pre-existing materials incorporated in deliverables solely to the extent necessary to use those deliverables.</p>
+    <h3>Contractor Engagements (ICA)</h3>
+    <p>All work product created by contractors in the course of services performed under an ICA vests exclusively in Anthology as work made for hire or by irrevocable assignment. Contractors retain no rights in deliverables and irrevocably waive all moral rights in respect thereof. Contractors may not disclose, reproduce, or use any work product, client materials, or Anthology materials outside the scope of the engagement.</p>
+    <h3>Software Development Services</h3>
+    <p>Where services involve software development, Anthology retains ownership of all software work product and derivatives unless otherwise expressly agreed in a supplemental exhibit. Clients receive a limited, non-transferable, non-sublicensable licence to use delivered software solely for their internal business operations in accordance with the applicable documentation. Clients may not reverse engineer, decompile, modify, or redistribute software without Anthology's written consent.</p>
+    <p>Software deliverables are warranted to materially conform to agreed specifications for 180 days following delivery. This warranty does not extend to third-party materials incorporated in software.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section-block">
+    <h2><span class="num">05</span> Confidentiality</h2>
+    <p>All parties to Anthology's agreements are bound by mutual confidentiality obligations. Confidential Information includes all non-public information relating to business operations, strategies, pricing, technology, personnel, clients, and trade secrets, whether disclosed in written, electronic, oral, or other form.</p>
+    <p>Confidential Information may not be disclosed to third parties without prior written consent, and may only be used to the extent necessary to perform obligations under the applicable agreement. Obligations with respect to trade secrets survive termination of any agreement indefinitely.</p>
+    <p>Disclosure is permitted only where required by applicable law, regulation, or valid court order, and only after advance written notice has been provided to Anthology (where practicable) to allow it to seek appropriate protections.</p>
+    <div class="highlight-box">
+      <strong>Defend Trade Secrets Act (18 U.S.C. § 1833(b)):</strong> Individuals will not be held criminally or civilly liable for disclosing a trade secret in confidence to a government official or attorney solely for the purpose of reporting a suspected violation of law, or in a document filed under seal in legal proceedings.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section-block">
+    <h2><span class="num">06</span> Non-Solicitation</h2>
+    <p>Contractors and candidates engaged by Anthology agree that during the term of their agreement and for a period of 12 months thereafter, they will not directly or indirectly solicit, contact, or attempt to solicit or contact Anthology's current, former, or prospective clients for the purpose of offering goods or services similar to or competitive with those offered by Anthology.</p>
+    <p>This obligation applies through any form of communication including email, telephone, post, instant messaging, and all social media platforms (including but not limited to LinkedIn, X, Facebook, Instagram, and TikTok), whether or not such platforms exist at the date of the agreement.</p>
+    <p>Candidates further warrant that they have not previously submitted, and will not during the term authorise any third party to submit, their profile to the same client for the same position outside of Anthology's representation.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="section-block">
+    <h2><span class="num">07</span> Term and Termination</h2>
+    <p>Agreements with Anthology continue until completion of the agreed services unless earlier terminated. Either party may terminate for material breach upon written notice, where the breach is incapable of remedy or is not remedied within 10 business days of notice. Anthology may terminate for non-payment after 30 days of written notice.</p>
+    <p>On termination or expiration:</p>
+    <ul>
+      <li>Anthology will deliver all completed deliverables for which payment has been received and return all client materials</li>
+      <li>Both parties will return or permanently destroy the other party's confidential information and certify such destruction in writing</li>
+      <li>Accrued payment obligations, intellectual property assignments, confidentiality obligations, non-solicitation covenants, and indemnification provisions survive termination</li>
+    </ul>
+  </div>
+
+  <!-- 8 -->
+  <div class="section-block">
+    <h2><span class="num">08</span> Warranties and Representations</h2>
+    <p>Anthology warrants that its services will be performed in a professional and workmanlike manner in accordance with industry standards. Where software deliverables are provided, Anthology warrants that each deliverable will materially conform to agreed specifications for 180 days following delivery, subject to the limitations set out in the applicable supplemental terms.</p>
+    <div class="disclaimer-box">
+      <strong>Disclaimer of Warranties.</strong> EXCEPT FOR THE EXPRESS WARRANTIES SET OUT IN AN EXECUTED AGREEMENT, ALL SERVICES, DELIVERABLES, AND MATERIALS ARE PROVIDED "AS IS". ANTHOLOGY DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. ANTHOLOGY MAKES NO WARRANTY THAT SERVICES OR DELIVERABLES WILL MEET ALL REQUIREMENTS, BE UNINTERRUPTED, ERROR-FREE, OR COMPATIBLE WITH ALL SYSTEMS OR THIRD-PARTY SOFTWARE.
+    </div>
+    <p>Contractors represent and warrant that they have the right to enter into their agreement with Anthology, possess the skills and qualifications to perform the agreed services, and will perform those services in compliance with all applicable laws.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section-block">
+    <h2><span class="num">09</span> Limitation of Liability</h2>
+    <div class="disclaimer-box">
+      <strong>Limitation of Liability.</strong> TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ANTHOLOGY BE LIABLE TO ANY PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, LOSS OF DATA, LOSS OF GOODWILL, BUSINESS INTERRUPTION, OR COST OF SUBSTITUTE SERVICES, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR ANY AGREEMENT WITH ANTHOLOGY, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, NEGLIGENCE, OR OTHERWISE), EVEN IF ANTHOLOGY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ANTHOLOGY'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO ANY AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY THE CLAIMING PARTY TO ANTHOLOGY IN THE THREE MONTHS PRECEDING THE CLAIM.
+    </div>
+    <p>Nothing in these Terms limits liability for fraud, gross negligence, or wilful misconduct, or any liability that cannot be excluded by applicable law.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section-block">
+    <h2><span class="num">10</span> Indemnification</h2>
+    <p>Each party agrees to indemnify, defend, and hold harmless the other party and its officers, directors, employees, agents, and permitted assigns from and against all losses, damages, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from:</p>
+    <ul>
+      <li>That party's breach of its representations, warranties, or obligations under the applicable agreement</li>
+      <li>Any third-party claim arising from that party's negligence or wilful misconduct</li>
+    </ul>
+    <p>Contractors additionally indemnify Anthology against all taxes, penalties, and contributions arising from their status as an independent contractor, and against any claims brought by persons employed or engaged by the contractor in connection with the services.</p>
+    <p>Clients additionally indemnify Anthology against claims arising from client materials, client instructions, or client's use of software in a manner not authorised under the applicable agreement.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="section-block">
+    <h2><span class="num">11</span> Change Orders and Amendments</h2>
+    <p>Any change to the scope of services must be agreed in writing by both parties through a formal Change Order. Neither party is bound by a proposed change until it is executed in writing. All amendments to any agreement must be in writing, signed by both parties, and expressly state that they amend the relevant agreement.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="section-block">
+    <h2><span class="num">12</span> Assignment</h2>
+    <p>Contractors and candidates may not assign their agreements with Anthology without Anthology's prior written consent. Anthology may freely assign its rights and obligations at any time, including in connection with a merger, acquisition, or business transfer.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="section-block">
+    <h2><span class="num">13</span> Governing Law and Dispute Resolution</h2>
+    <p>These Terms and all agreements between Anthology and its clients, contractors, and candidates are governed by the laws of the State of Texas, without reference to principles of conflict of laws.</p>
+    <p>The parties submit to the exclusive jurisdiction of the courts (both federal and state) of the City and County of Dallas, Texas for any action or proceeding arising out of or relating to these Terms or any such agreement.</p>
+    <p>Where a party seeks equitable relief — including in respect of non-solicitation or confidentiality breaches — it may do so without the requirement to post a bond or prove that monetary damages are an inadequate remedy.</p>
+  </div>
+
+  <!-- 14 -->
+  <div class="section-block">
+    <h2><span class="num">14</span> General</h2>
+    <ul>
+      <li><strong>Entire Agreement.</strong> These Terms, together with any executed agreements and statements of work, constitute the entire agreement between the parties and supersede all prior representations, agreements, and understandings relating to the same subject matter</li>
+      <li><strong>Severability.</strong> If any provision of these Terms is found invalid, illegal, or unenforceable, the remaining provisions continue in full force and effect</li>
+      <li><strong>Force Majeure.</strong> Neither party will be liable for failure or delay in performance to the extent caused by circumstances beyond its reasonable control</li>
+      <li><strong>No Waiver.</strong> Failure to enforce any provision of these Terms does not constitute a waiver of the right to enforce it in future</li>
+      <li><strong>Counterparts.</strong> Agreements may be executed in counterparts, including electronic and PDF copies, each of which constitutes an original and all of which together form one instrument</li>
+      <li><strong>Notices.</strong> All legal notices must be in writing and delivered to Anthology at 2300 Valley View Lane, Suite #538, Irving, TX 75062, or as otherwise specified in an executed agreement</li>
+    </ul>
+  </div>
+
+  <!-- 15 -->
+  <div class="section-block">
+    <h2><span class="num">15</span> Website Use</h2>
+    <p>Access to and use of <a href="https://www.anthology.ooo">www.anthology.ooo</a> is provided for informational purposes only. The content of this website does not constitute legal, financial, or professional advice, and does not form part of any contract. Anthology reserves the right to modify or withdraw website content at any time without notice.</p>
+    <p>Users of this website may not scrape, reproduce, or distribute content from this website without Anthology's prior written consent. All content on this website is the property of Anthology Solutions Inc. and is protected by applicable intellectual property laws.</p>
+  </div>
+
+  <div class="highlight-box" style="margin-top:3rem;">
+    <strong>Questions about these Terms?</strong> Contact Anthology Solutions Inc. at <a href="tel:+12142147474">+1 (214) 214-7474</a> or through the contact form at <a href="https://www.anthology.ooo/#contact">www.anthology.ooo</a>. For specific engagement terms, please refer to your executed Master Services Agreement, Independent Contractor Agreement, or Right to Represent Agreement.
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-left">&copy; 2025 Anthology Solutions Inc. All rights reserved.</span>
+  <div class="footer-right">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
