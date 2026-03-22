@@ -1,883 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | ANTHOLOGY SOLUTIONS INC</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background-color: #073763;
-            box-shadow: 0 2px 10px rgba(7, 55, 99, 0.3);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            position: relative;
-        }
-
-        .logo-triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 43px solid #c69815;
-        }
-
-        .logo-inner {
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 20px solid #073763;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #c69815;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ddc363;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a:hover {
-            color: #c69815;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #073763 0%, #0a4a7a 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(220, 195, 99, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(198, 152, 21, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .hero-logo .logo-triangle {
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-bottom: 104px solid #c69815;
-        }
-
-        .hero-logo .logo-inner {
-            top: 35px;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 50px solid #073763;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            color: #ddc363;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-            color: #ffffff;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #c69815, #ddc363);
-            color: #073763;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(198, 152, 21, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(135deg, #ddc363, #c69815);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(198, 152, 21, 0.4);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #073763;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #c69815, #ddc363);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* About Section */
-        .about {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-highlight {
-            background: linear-gradient(135deg, #073763, #0a4a7a);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(220, 195, 99, 0.2) 0%, transparent 70%);
-        }
-
-        .about-highlight h3 {
-            color: #c69815;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: #073763;
-            color: white;
-        }
-
-        .services .section-title {
-            color: #ddc363;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(220, 195, 99, 0.2);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #c69815, #ddc363);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(220, 195, 99, 0.4);
-        }
-
-        .service-icon {
-            font-size: 3.5rem;
-            color: #c69815;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #ddc363;
-            font-weight: 600;
-        }
-
-        .service-card p {
-            color: #ffffff;
-            line-height: 1.7;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        /* Why Choose Us Section */
-        .why-us {
-            background: linear-gradient(135deg, #ddc363 0%, #c69815 100%);
-            color: #073763;
-            text-align: center;
-        }
-
-        .why-us .section-title {
-            color: #073763;
-        }
-
-        .why-us .section-title::after {
-            background: #073763;
-        }
-
-        .why-us-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #073763;
-            font-weight: 500;
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature {
-            background: rgba(7, 55, 99, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(7, 55, 99, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .feature:hover {
-            background: rgba(7, 55, 99, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #073763;
-        }
-
-        .feature h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: #073763;
-        }
-
-        .feature p {
-            color: #073763;
-            opacity: 0.8;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .contact-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(7, 55, 99, 0.1);
-            border-top: 4px solid #c69815;
-        }
-
-        .contact-item h3 {
-            color: #073763;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-item p {
-            color: #555;
-            margin: 0.5rem 0;
-        }
-
-        .contact-item a {
-            color: #c69815;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            color: #073763;
-        }
-
-        .contact p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .contact-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #073763, #0a4a7a);
-            color: #ddc363;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(7, 55, 99, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-button:hover {
-            background: linear-gradient(135deg, #0a4a7a, #073763);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(7, 55, 99, 0.4);
-            color: #c69815;
-        }
-
-        /* Footer */
-        footer {
-            background: #073763;
-            color: #ddc363;
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #c69815;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p {
-            opacity: 0.9;
-            line-height: 1.6;
-            color: #ddc363;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(220, 195, 99, 0.3);
-            padding-top: 2rem;
-            opacity: 0.8;
-            color: #ddc363;
-        }
-
-        /* Privacy Section */
-        .privacy {
-            background: #f8f9fa;
-            padding: 80px 0;
-        }
-
-        .privacy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-top: 4px solid #c69815;
-        }
-
-        .privacy-content h3 {
-            color: #073763;
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem 0;
-            border-bottom: 2px solid #ddc363;
-            padding-bottom: 0.5rem;
-        }
-
-        .privacy-content p {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .privacy-content ul {
-            color: #555;
-            line-height: 1.7;
-            margin: 1rem 0 1.5rem 2rem;
-        }
-
-        .privacy-content li {
-            margin-bottom: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .logo-text {
-                font-size: 1.2rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .service-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .hero-logo {
-                width: 80px;
-                height: 80px;
-            }
-
-            .hero-logo .logo-triangle {
-                border-left: 40px solid transparent;
-                border-right: 40px solid transparent;
-                border-bottom: 69px solid #c69815;
-            }
-
-            .hero-logo .logo-inner {
-                top: 23px;
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent;
-                border-bottom: 33px solid #073763;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile menu button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #c69815;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anthology Solutions Inc. — Technology. Governed. Intelligence. Applied.</title>
+  <meta name="description" content="Anthology Solutions Inc. specialises in Product Development, AI Governance, and Staff Augmentation — helping organisations build, govern, and scale intelligent technology."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:        #1a1916;
+      --ink-mid:    #4a4840;
+      --ink-light:  #8a8880;
+      --paper:      #f5f3ef;
+      --paper-dark: #ede9e2;
+      --paper-mid:  #e8e4dc;
+      --rule:       #d4d0c8;
+      --accent-warm:#b5460f;
+      --white:      #ffffff;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    .eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-light); }
+    .rule-line { width: 40px; height: 1px; background: var(--accent-warm); display: block; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(245,243,239,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-logo { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.08em; color: var(--ink-mid); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 0.6rem 1.4rem; transition: background 0.2s, transform 0.2s; }
+    .nav-cta:hover { background: var(--ink-mid); transform: translateY(-1px); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 64px; }
+    .hero-left {
+      background: var(--paper); padding: 10vh 6% 8vh;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--rule); position: relative;
+    }
+    .hero-left::before { content: ''; position: absolute; left: 0; top: 15%; bottom: 15%; width: 3px; background: var(--accent-warm); }
+    .hero-eyebrow { margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
+    .hero-h1 { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 300; line-height: 1.04; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 2.5rem; }
+    .hero-h1 strong { font-weight: 600; font-style: italic; display: block; }
+    .hero-p { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); max-width: 400px; margin-bottom: 3rem; }
+    .hero-actions { display: flex; align-items: center; gap: 2rem; }
+    .btn-primary { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--ink); padding: 1rem 2.2rem; transition: background 0.2s, transform 0.2s; }
+    .btn-primary:hover { background: var(--ink-mid); transform: translateY(-2px); }
+    .btn-ghost { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent-warm); color: var(--accent-warm); }
+    .hero-right { background: var(--ink); padding: 10vh 6% 8vh; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-tagline { font-family: var(--serif); font-size: clamp(1.6rem, 2.5vw, 2.6rem); font-weight: 300; font-style: italic; line-height: 1.35; color: rgba(245,243,239,0.75); margin-top: 5rem; }
+    .hero-tagline em { font-style: normal; color: var(--paper); font-weight: 400; }
+    .hero-stats { display: flex; flex-direction: column; }
+    .hero-stat { padding: 1.8rem 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: baseline; gap: 1.2rem; }
+    .hero-stat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--paper); line-height: 1; min-width: 4ch; }
+    .hero-stat-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,243,239,0.4); }
+
+    /* SECTION COMMON */
+    .section { padding: 7rem 5%; }
+    .section-header { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; margin-bottom: 5rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); }
+    .section-header-left { display: flex; flex-direction: column; gap: 1rem; padding-top: 0.3rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2.8rem, 4vw, 4rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; }
+    .section-body { font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); max-width: 540px; }
+
+    /* SERVICES */
+    .services-section { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--rule); }
+    .service-card { padding: 3rem 2.5rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); position: relative; transition: background 0.3s; }
+    .service-card:nth-child(3) { border-right: none; }
+    .service-card:hover { background: var(--paper); }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent-warm); transition: width 0.4s ease; }
+    .service-card:hover::after { width: 100%; }
+    .service-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--rule); line-height: 1; margin-bottom: 1.8rem; display: block; }
+    .service-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; line-height: 1.2; margin-bottom: 1.2rem; }
+    .service-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); margin-bottom: 2rem; }
+    .service-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .service-bullets li { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.04em; color: var(--ink-mid); display: flex; align-items: flex-start; gap: 0.6rem; }
+    .service-bullets li::before { content: '—'; color: var(--accent-warm); flex-shrink: 0; margin-top: 1px; }
+
+    /* STAFF AUG */
+    .staffaug-section { background: var(--paper); }
+    .staffaug-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--rule); }
+    .staffaug-cell { padding: 2.8rem 2.4rem; border-right: 1px solid var(--rule); transition: background 0.3s; }
+    .staffaug-cell:last-child { border-right: none; }
+    .staffaug-cell:hover { background: var(--paper-dark); }
+    .staffaug-icon { width: 36px; height: 1px; background: var(--accent-warm); margin-bottom: 1.6rem; }
+    .staffaug-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; margin-bottom: 0.8rem; }
+    .staffaug-text { font-size: 0.87rem; font-weight: 300; line-height: 1.8; color: var(--ink-mid); }
+
+    /* AI GOVERNANCE */
+    .ai-section { background: var(--ink); padding: 7rem 5%; }
+    .ai-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6rem; align-items: start; }
+    .ai-left .eyebrow { color: rgba(245,243,239,0.35); }
+    .ai-title { font-family: var(--serif); font-size: clamp(2.8rem, 4vw, 4.2rem); font-weight: 300; line-height: 1.08; color: var(--paper); margin: 1.5rem 0; }
+    .ai-title em { font-style: italic; }
+    .ai-body { font-size: 1rem; font-weight: 300; line-height: 1.85; color: rgba(245,243,239,0.55); margin-bottom: 3rem; }
+    .ai-pillars { display: flex; flex-direction: column; }
+    .ai-pillar { padding: 1.8rem 0; border-top: 1px solid rgba(255,255,255,0.08); display: grid; grid-template-columns: 1.5rem 1fr; gap: 1.2rem; align-items: start; }
+    .ai-pillar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-warm); margin-top: 0.45rem; }
+    .ai-pillar-name { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--paper); margin-bottom: 0.4rem; }
+    .ai-pillar-text { font-size: 0.87rem; font-weight: 300; line-height: 1.75; color: rgba(245,243,239,0.45); }
+    .ai-quote { font-family: var(--serif); font-size: clamp(1.3rem, 2vw, 1.9rem); font-weight: 300; font-style: italic; line-height: 1.5; color: rgba(245,243,239,0.65); padding-left: 2rem; border-left: 2px solid var(--accent-warm); margin-bottom: 3rem; }
+    .ai-coming { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 2rem; }
+    .ai-coming-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-warm); margin-bottom: 0.8rem; }
+    .ai-coming-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--paper); margin-bottom: 0.8rem; }
+    .ai-coming-text { font-size: 0.87rem; font-weight: 300; line-height: 1.75; color: rgba(245,243,239,0.45); }
+
+    /* APPROACH */
+    .approach-section { background: var(--paper-dark); }
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .approach-left { padding-right: 5%; border-right: 1px solid var(--rule); }
+    .approach-right { padding-left: 5%; }
+    .approach-item { padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
+    .approach-item:last-child { border-bottom: none; }
+    .approach-num { font-family: var(--sans); font-size: 0.72rem; font-weight: 500; color: var(--accent-warm); letter-spacing: 0.12em; margin-bottom: 0.8rem; }
+    .approach-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; }
+    .approach-text { font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); }
+
+    /* TAGLINE BAND */
+    .tagline-band { background: var(--accent-warm); padding: 3rem 5%; display: flex; align-items: center; justify-content: center; }
+    .tagline-band p { font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 300; font-style: italic; color: var(--white); text-align: center; }
+
+    /* CONTACT */
+    .contact-section { background: var(--white); padding: 7rem 5%; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+    .contact-title { font-family: var(--serif); font-size: clamp(2.5rem, 3.5vw, 3.8rem); font-weight: 300; line-height: 1.1; margin: 1.5rem 0 1.5rem; }
+    .contact-body { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: var(--ink-mid); margin-bottom: 2.5rem; }
+    .contact-details { display: flex; flex-direction: column; }
+    .contact-row { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding: 1.2rem 0; border-top: 1px solid var(--rule); align-items: baseline; }
+    .contact-row:last-child { border-bottom: 1px solid var(--rule); }
+    .contact-row-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); }
+    .contact-row-value { font-size: 0.92rem; font-weight: 300; color: var(--ink); }
+    .contact-row-value a { color: var(--accent-warm); transition: opacity 0.2s; }
+    .contact-row-value a:hover { opacity: 0.7; }
+    .contact-form { display: flex; flex-direction: column; }
+    .form-field { display: flex; flex-direction: column; border-bottom: 1px solid var(--rule); padding: 1.2rem 0; }
+    .form-field:first-child { border-top: 1px solid var(--rule); }
+    .form-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 0.5rem; }
+    .form-input, .form-select, .form-textarea { font-family: var(--sans); font-size: 0.92rem; font-weight: 300; color: var(--ink); background: transparent; border: none; outline: none; padding: 0.3rem 0; width: 100%; resize: none; }
+    .form-textarea { min-height: 100px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--rule); }
+    .form-submit { margin-top: 2rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); background: var(--ink); border: none; padding: 1.1rem 2.5rem; cursor: pointer; transition: background 0.2s, transform 0.2s; width: 100%; }
+    .form-submit:hover { background: var(--ink-mid); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 4rem 5% 2.5rem; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
+    .footer-brand-name { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--paper); margin-bottom: 1rem; }
+    .footer-brand-tagline { font-family: var(--serif); font-size: 1rem; font-style: italic; font-weight: 300; color: rgba(245,243,239,0.4); line-height: 1.6; margin-bottom: 1.5rem; }
+    .footer-ceo { font-size: 0.82rem; font-weight: 300; color: rgba(245,243,239,0.38); line-height: 1.8; }
+    .footer-ceo strong { color: rgba(245,243,239,0.65); font-weight: 400; }
+    .footer-ceo a { color: rgba(245,243,239,0.38); }
+    .footer-col-title { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,243,239,0.3); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul li a { font-size: 0.87rem; font-weight: 300; color: rgba(245,243,239,0.5); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--paper); }
+    .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-notice { font-size: 0.72rem; font-weight: 300; color: rgba(245,243,239,0.22); line-height: 1.7; max-width: 600px; }
+    .footer-copy { font-size: 0.72rem; font-weight: 300; color: rgba(245,243,239,0.22); white-space: nowrap; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { padding: 4rem 6%; }
+      .hero-tagline { margin-top: 0; }
+      .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-card:nth-child(3) { border-right: 1px solid var(--rule); }
+      .service-card:nth-child(even) { border-right: none; }
+      .ai-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-h1 { font-size: 3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none !important; }
+      .staffaug-grid { grid-template-columns: 1fr; }
+      .staffaug-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-left { border-right: none; padding-right: 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+      .approach-right { padding-left: 0; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <div class="logo-triangle"></div>
-                    <div class="logo-inner"></div>
-                </div>
-                <div class="logo-text">Anthology Solutions Inc</div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-            </ul>
-            <button class="mobile-menu-btn">☰</button>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <div class="logo-triangle"></div>
-                    <div class="logo-inner"></div>
-                </div>
-                <h1>ANTHOLOGY SOLUTIONS INC</h1>
-                <p class="hero-subtitle">We at Anthology Solutions Inc. aspire to be an anthology of solutions to your requirements.<br>
-                We would love to add your story to our Anthology!</p>
-                <a href="#about" class="cta-button">Get To Know Us</a>
-            </div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Anthology</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ai-governance">AI Governance</a></li>
+    <li><a href="#approach">Our Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="eyebrow">Anthology Solutions Inc.</span>
+      <span class="rule-line"></span>
+    </div>
+    <h1 class="hero-h1">
+      Technology<br/>
+      <strong>Governed.</strong>
+      Intelligence<br/>
+      <strong>Applied.</strong>
+    </h1>
+    <p class="hero-p">We build, govern, and scale intelligent technology — partnering with organisations to deliver product excellence, responsible AI, and the right talent at every stage of growth.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Start a Conversation</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-tagline">
+      "Thank you for making<br/>your story <em>a part of<br/>our Anthology."</em>
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">01</span>
+        <span class="hero-stat-label">Product Development</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">02</span>
+        <span class="hero-stat-label">AI Governance</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">03</span>
+        <span class="hero-stat-label">Staff Augmentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="section-header reveal">
+    <div class="section-header-left">
+      <span class="eyebrow">What We Do</span>
+      <span class="rule-line"></span>
+    </div>
+    <div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-body">From conception to deployment and beyond — Anthology delivers integrated technology services that let organisations build faster, scale smarter, and operate with confidence.</p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-num">01</span>
+      <h3 class="service-name">Product<br/>Development</h3>
+      <p class="service-desc">We partner with organisations to design and build digital products from the ground up — or evolve existing platforms into modern, scalable solutions. Our approach is end-to-end: strategy, architecture, build, and launch.</p>
+      <ul class="service-bullets">
+        <li>Discovery, scoping &amp; roadmap planning</li>
+        <li>Full-stack web &amp; mobile development</li>
+        <li>UX/UI design &amp; prototyping</li>
+        <li>API design, integration &amp; system architecture</li>
+        <li>QA, testing &amp; performance optimisation</li>
+        <li>Post-launch support &amp; iteration</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <span class="service-num">02</span>
+      <h3 class="service-name">AI<br/>Governance</h3>
+      <p class="service-desc">As AI becomes central to every business function, the organisations that thrive will be those who deploy it responsibly. We are specialists in building the governance frameworks that make AI trustworthy, auditable, and compliant.</p>
+      <ul class="service-bullets">
+        <li>AI policy &amp; governance framework design</li>
+        <li>Risk assessment &amp; bias auditing</li>
+        <li>Regulatory compliance (EU AI Act &amp; beyond)</li>
+        <li>Ethical AI strategy &amp; advisory</li>
+        <li>AI procurement review &amp; due diligence</li>
+        <li>Executive &amp; team AI literacy programmes</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <span class="service-num">03</span>
+      <h3 class="service-name">Staff<br/>Augmentation</h3>
+      <p class="service-desc">The right people, at the right time. We provide highly skilled technology professionals on a flexible basis — embedding seamlessly into your team to fill capability gaps, accelerate delivery, or bridge key hiring phases.</p>
+      <ul class="service-bullets">
+        <li>Software engineers &amp; architects</li>
+        <li>AI/ML engineers &amp; data scientists</li>
+        <li>Product managers &amp; delivery leads</li>
+        <li>QA engineers &amp; DevOps specialists</li>
+        <li>Short, mid &amp; long-term engagements</li>
+        <li>Global talent network, remote-first ready</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF AUG DETAIL -->
+<section class="section staffaug-section">
+  <div class="section-header reveal">
+    <div class="section-header-left">
+      <span class="eyebrow">Staff Augmentation</span>
+      <span class="rule-line"></span>
+    </div>
+    <div>
+      <h2 class="section-title">The right talent,<br/>when you need it</h2>
+      <p class="section-body">Anthology's staff augmentation practice connects organisations with vetted, senior-level technology professionals — giving you the flexibility of contracting with the quality of a permanent hire.</p>
+    </div>
+  </div>
+  <div class="staffaug-grid reveal">
+    <div class="staffaug-cell">
+      <div class="staffaug-icon"></div>
+      <h4 class="staffaug-title">Rapid Deployment</h4>
+      <p class="staffaug-text">We move quickly. From requirement brief to first day on-site or remote, our screening and placement process is designed to minimise friction and maximise fit. No lengthy procurement cycles.</p>
+    </div>
+    <div class="staffaug-cell">
+      <div class="staffaug-icon"></div>
+      <h4 class="staffaug-title">Vetted Senior Talent</h4>
+      <p class="staffaug-text">Every professional in our network has been rigorously assessed — technically and culturally. We place mid-to-senior level specialists who contribute from day one, not juniors who need managing.</p>
+    </div>
+    <div class="staffaug-cell">
+      <div class="staffaug-icon"></div>
+      <h4 class="staffaug-title">Flexible Contracts</h4>
+      <p class="staffaug-text">From a two-week sprint to a multi-year programme, our engagement models are built around your reality. We offer time-and-materials, fixed-scope, and retained arrangements — tailored to your needs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI GOVERNANCE FEATURE -->
+<section class="ai-section" id="ai-governance">
+  <div class="ai-inner">
+    <div class="ai-left reveal">
+      <span class="eyebrow">Our Specialisation</span>
+      <h2 class="ai-title">AI Governance<br/>for the<br/><em>next decade</em></h2>
+      <p class="ai-body">AI is moving faster than regulation, faster than internal policy, and in many cases faster than executive understanding. Anthology helps organisations get ahead of that curve — building governance structures that are rigorous enough to satisfy regulators and flexible enough to move with the technology.</p>
+      <div class="ai-pillars">
+        <div class="ai-pillar">
+          <div class="ai-pillar-dot"></div>
+          <div>
+            <p class="ai-pillar-name">Policy &amp; Framework Design</p>
+            <p class="ai-pillar-text">Custom AI governance policies built around your industry, risk appetite, and regulatory environment. From high-level principles to operational procedure.</p>
+          </div>
         </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title fade-in">About Us</h2>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>At Anthology Solutions Inc, we are committed to providing innovative solutions to empower businesses to achieve their goals.</p>
-                    <p>We are dedicated to providing our clients with the highest level of service and support. Our experience and knowledge on Product Development and Staff Augmentation services enables us to help businesses achieve their goals, streamline their operations, and stay ahead of the competition.</p>
-                </div>
-                <div class="about-highlight fade-in">
-                    <h3>Our Mission</h3>
-                    <p>To be the trusted partner that transforms your vision into reality through innovative solutions and exceptional service delivery.</p>
-                </div>
-            </div>
+        <div class="ai-pillar">
+          <div class="ai-pillar-dot"></div>
+          <div>
+            <p class="ai-pillar-name">Auditing &amp; Risk Assessment</p>
+            <p class="ai-pillar-text">Systematic reviews of AI systems for bias, fairness, reliability, and accountability. Clear findings and actionable remediation roadmaps.</p>
+          </div>
         </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title fade-in">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">💻</div>
-                    <h3>Product Development</h3>
-                    <p>We provide comprehensive product development services from concept to launch, ensuring your vision becomes reality with cutting-edge technology and innovative solutions.<p> 
-                    <p>At Anthology, we take pride in our ability to help clients develop custom software solutions that meet their unique needs. We take a collaborative approach to product development, working closely with clients to define requirements, design user interfaces, and develop software that is reliable, scalable, and secure.<p>
-                    <p>Our team of experienced developers has the expertise to tackle even the most complex projects, ensuring that our clients have a solution that is tailored to their specific needs.<p>
-                    <p>As a boutique consultancy, we are large enough to take care of your multiple requirements, yet small enough to provide you with a dedicated point of contact.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">👨‍💼</div>
-                    <h3>Staff Augmentation</h3>
-                    <p>Our staff augmentation services help you scale your team with skilled professionals who integrate seamlessly with your existing workforce to drive success.</p>
-                    <p>For us, reputation is everything. We understand the difference between quality and mediocre and we don't look to place just anyone in your company.<p> 
-                    <p>Finding the right talent can be challenging, which is why we offer staff augmentation services to help businesses build high-performing teams. Our team of experienced recruiters and talent managers specializes in identifying and recruiting top talent in the tech industry. We work closely with businesses to understand their unique staffing needs and provide them with the right resources to fill gaps in their teams.<p> 
-                    <p>We get to know you and your organization, understand your company culture and your particular team's work environment. We then source candidates who fit this and who want to invest in your company for the long term.<p>
-                </div>
-            </div>
+        <div class="ai-pillar">
+          <div class="ai-pillar-dot"></div>
+          <div>
+            <p class="ai-pillar-name">Regulatory Compliance</p>
+            <p class="ai-pillar-text">Preparation for EU AI Act obligations, sector-specific regulations, and emerging international frameworks. We translate complex requirements into practical programmes.</p>
+          </div>
         </div>
-    </section>
-
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title fade-in">Why Choose Us</h2>
-            <div class="why-us-content fade-in">
-                <p>We know it's not just the destination but the journey you experience to get there, and we've developed a bespoke customer experience program to ensure you are looked after every step of the way.</p>
-                <p>So whether you're on the search for a trusted partner for your product development or search for talent, we are here to make things easier for you.</p>
-            </div>
-            <div class="why-us-grid">
-                <div class="feature fade-in">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Tailored Solutions</h3>
-                    <p>Custom solutions designed specifically for your business needs and requirements</p>
-                </div>
-                <div class="feature fade-in">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick turnaround times without compromising on quality or attention to detail</p>
-                </div>
-                <div class="feature fade-in">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Trusted Partnership</h3>
-                    <p>Building long-term relationships based on trust, transparency, and exceptional results</p>
-                </div>
-            </div>
+        <div class="ai-pillar">
+          <div class="ai-pillar-dot"></div>
+          <div>
+            <p class="ai-pillar-name">Executive Advisory</p>
+            <p class="ai-pillar-text">Board-level and C-suite guidance on responsible AI adoption — from procurement decisions to public disclosure strategy.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="ai-right reveal reveal-delay-2">
+      <blockquote class="ai-quote">"Responsible AI is not a constraint on innovation — it is the foundation on which lasting innovation is built."</blockquote>
+      <div class="ai-coming">
+        <p class="ai-coming-label">On the Horizon</p>
+        <h4 class="ai-coming-title">New AI Solutions — Coming Soon</h4>
+        <p class="ai-coming-text">Anthology is developing a suite of AI-native products and tools emerging directly from our governance and advisory practice. Built on deep domain knowledge, designed for the organisations navigating AI's most complex challenges. Details to follow.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <div class="contact-content fade-in">
-                <p>Get in touch today to learn more about us and the services we have to offer. Let's discuss how we can add your success story to our anthology.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>📧 Email</h3>
-                        <p><a href="mailto:info@anthology.ooo">info@anthology.ooo</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📞 Phone</h3>
-                        <p><a href="tel:214-214-7474">214.214.7474</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>📍 Address</h3>
-                        <p>Anthology Solutions Inc.<br>
-                        2300 Valley View Lane<br>
-                        Suite# 538<br>
-                        Irving, TX 75062</p>
-                    </div>
-                </div>
-                
-                <a href="mailto:info@anthology.ooo" class="contact-button">Contact Us Today</a>
-            </div>
+<!-- APPROACH -->
+<section class="section approach-section" id="approach">
+  <div class="section-header reveal">
+    <div class="section-header-left">
+      <span class="eyebrow">How We Work</span>
+      <span class="rule-line"></span>
+    </div>
+    <div>
+      <h2 class="section-title">Our Approach</h2>
+      <p class="section-body">We operate with the discipline of a consultancy and the directness of a partner. No jargon, no over-engineering — just clear thinking, honest advice, and delivery that holds.</p>
+    </div>
+  </div>
+  <div class="approach-grid reveal">
+    <div class="approach-left">
+      <div class="approach-item">
+        <p class="approach-num">01 — Discover</p>
+        <h4 class="approach-title">Understand before we build</h4>
+        <p class="approach-text">Every engagement begins with deep discovery. We invest time understanding your business context, constraints, stakeholders, and objectives — so that everything we design and deliver is genuinely fit for purpose.</p>
+      </div>
+      <div class="approach-item">
+        <p class="approach-num">02 — Design</p>
+        <h4 class="approach-title">Architecture with intention</h4>
+        <p class="approach-text">Whether designing a product, a governance framework, or an augmentation structure, we approach every decision with rigour. Each choice is deliberate, documented, and traceable back to your goals.</p>
+      </div>
+      <div class="approach-item">
+        <p class="approach-num">03 — Deliver</p>
+        <h4 class="approach-title">Execution without compromise</h4>
+        <p class="approach-text">We deliver — on time, on brief, and to a standard we are proud of. Our teams communicate proactively, flag risks early, and hold themselves to the same expectations we set for our clients.</p>
+      </div>
+    </div>
+    <div class="approach-right">
+      <div class="approach-item">
+        <p class="approach-num">04 — Govern</p>
+        <h4 class="approach-title">Oversight that enables</h4>
+        <p class="approach-text">Good governance is not bureaucracy — it is the structure that lets organisations move with confidence. We build oversight into everything we deliver, so that you retain control as you scale.</p>
+      </div>
+      <div class="approach-item">
+        <p class="approach-num">05 — Evolve</p>
+        <h4 class="approach-title">Partnerships that last</h4>
+        <p class="approach-text">Technology and business never stand still, and neither do we. Our engagements are designed to evolve with you — whether that means extending a contract, deepening a service, or transitioning capability in-house.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BAND -->
+<div class="tagline-band">
+  <p>"Thank you for making your story a part of our Anthology."</p>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="contact-title">Let's build<br/>something<br/>together.</h2>
+      <p class="contact-body">Whether you are exploring a specific service or simply want to understand how Anthology might be relevant to your organisation, we welcome the conversation. We work with clients globally.</p>
+      <div class="contact-details">
+        <div class="contact-row">
+          <span class="contact-row-label">CEO</span>
+          <span class="contact-row-value">Rish Vitta</span>
         </div>
-    </section>
-
-    <section id="privacy" class="privacy">
-        <div class="container">
-            <h2 class="section-title fade-in">Privacy Policy</h2>
-            <div class="privacy-content fade-in">
-                <p><strong>Anthology Solutions Inc</strong> is committed to protecting the privacy of our website users and takes steps to ensure that information collected is dealt with in accordance with our own Privacy Policy and relevant Privacy legislation.</p>
-                
-                <h3>How your information will be collected</h3>
-                <p>As a user of Anthology Solutions Inc's website, you may choose to register online for employment opportunities. From your registration we collect personal information from you which may include (but is not limited to) cookies, your contact details, work history, skills, education, qualifications, and other personal details relevant to an employment application. We may also collect information from you through phone, digital, and face to face interviews, email, and the following entities when we are assisting you with an employment application: organizations and individuals where your permission has been obtained to access referees, organizations that supply pre-employment vetting services such as educational checks, criminal and credit checks, and the like.</p>
-                
-                <p>If you do not provide us with all the information we require we may be limited in our ability to put you forward for employment opportunities.</p>
-                
-                <h3>How your personal information will be used</h3>
-                <p>Any information supplied may be made available to:</p>
-                <ul>
-                    <li>Anthology Solutions Inc's own personnel and agents who are involved in the employment application process,</li>
-                    <li>Potential employers who may be domiciled in the United States of America, New Zealand, Australia, Singapore or Asia. Your permission will be sought before information is passed on.</li>
-                </ul>
-                
-                <h3>Storage of your personal information</h3>
-                <p>The information we collect is stored on a secure data base and Anthology Solutions Inc will take reasonable steps to protect this information. Information will not be provided to any other parties without your permission, except as required by law.</p>
-                
-                <p>We will use all reasonable safeguards to protect your information against loss or misuse, or disclosure in any way other than for the express purpose of assisting you with your employment application. Whilst Anthology Solutions Inc will from time to time provide links to other websites, we do not take responsibility for the privacy practices of these sites.</p>
-                
-                <h3>Access to your personal information</h3>
-                <p>We invite you to update any information supplied at any time by calling us on <a href="tel:214-214-7474">(214) 214-7474</a>, or emailing us on <a href="mailto:hr@anthology.ooo">hr@anthology.ooo</a>. You are welcome to a copy of the information held subject to any exceptions provided by relevant legislation.</p>
-                
-                <p>This Privacy Policy may be reviewed by Anthology Solutions Inc from time to time and we reserve the right to update it as we deem necessary.</p>
-            </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Mobile</span>
+          <span class="contact-row-value"><a href="tel:+14244247474">+1 (424) 424-7474</a></span>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Anthology Solutions Inc</h3>
-                    <p>Your trusted partner for innovative business solutions and professional services. We create an anthology of success stories.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <p>Product Development<br>Staff Augmentation<br>Business Consulting<br>Technology Solutions</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
-                    <p>Email: <a href="mailto:info@anthology.ooo" style="color: #ddc363;">info@anthology.ooo</a><br>
-                    Phone: <a href="tel:214-214-7474" style="color: #ddc363;">214.214.7474</a><br>
-                    Address: 2300 Valley View Lane, Suite# 538<br>
-                    Irving, TX 75062</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2018 Anthology Solutions Inc. All rights reserved. | Crafting success stories through innovative solutions.</p>
-            </div>
+        <div class="contact-row">
+          <span class="contact-row-label">Website</span>
+          <span class="contact-row-value"><a href="https://www.anthology.ooo" target="_blank">www.anthology.ooo</a></span>
         </div>
-    </footer>
+        <div class="contact-row">
+          <span class="contact-row-label">Registered</span>
+          <span class="contact-row-value">Anthology Solutions Inc. — Irving, Texas, USA</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right reveal reveal-delay-1">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" type="text" placeholder="Your name" required/>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Organisation</label>
+          <input class="form-input" type="text" placeholder="Your organisation"/>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Service Interest</label>
+          <select class="form-select form-input">
+            <option value="" disabled selected>Select a service</option>
+            <option>Product Development</option>
+            <option>AI Governance</option>
+            <option>Staff Augmentation</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about your project or requirement"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <p class="footer-brand-name">Anthology</p>
+      <p class="footer-brand-tagline">"Thank you for making your story a part of our Anthology."</p>
+      <div class="footer-ceo">
+        <strong>Rish Vitta</strong> — CEO<br/>
+        <a href="tel:+14244247474">+1 (424) 424-7474</a><br/>
+        <a href="https://www.anthology.ooo">www.anthology.ooo</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Services</p>
+      <ul>
+        <li><a href="#services">Product Development</a></li>
+        <li><a href="#ai-governance">AI Governance</a></li>
+        <li><a href="#services">Staff Augmentation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Company</p>
+      <ul>
+        <li><a href="#approach">Our Approach</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="https://www.anthology.ooo">anthology.ooo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Legal</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-notice">
+      &copy; 2025 Anthology Solutions Inc. All rights reserved. This communication and any attachment to it are intended only to be read or used by the named addressee. It is confidential and may contain legally privileged information. No confidentiality or privilege is waived or lost by any mistaken transmission. Anthology Solutions Inc. is not responsible for any unauthorised alterations to this communication.
+    </p>
+    <p class="footer-copy">Anthology Solutions Inc.</p>
+  </div>
+</footer>
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(7, 55, 99, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = '#073763';
-                header.style.backdropFilter = 'none';
-            }
-        });
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuBtn?.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = '#073763';
-                navLinks.style.padding = '1rem';
-                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-            }
-        });
-    </script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Enquiry Sent — We will be in touch';
+    btn.style.background = 'var(--accent-warm)';
+    btn.disabled = true;
+  }
+</script>
 </body>
 </html>
