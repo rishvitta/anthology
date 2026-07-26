@@ -1,65 +1,235 @@
-import Image from "next/image";
+import Hero from '@/components/Hero';
+import ServiceCard from '@/components/ServiceCard';
+import ContactForm from '@/components/ContactForm';
+
+const SERVICES = [
+  {
+    number: '01',
+    title: 'Product Development',
+    description:
+      'We partner with organisations to design and build digital products from the ground up — or evolve existing platforms into modern, scalable solutions. Our approach is end-to-end: strategy, architecture, build, and launch.',
+    items: [
+      'Discovery, scoping & roadmap planning',
+      'Full-stack web & mobile development',
+      'UX/UI design & prototyping',
+      'API design, integration & system architecture',
+      'QA, testing & performance optimisation',
+      'Post-launch support & iteration',
+    ],
+  },
+  {
+    number: '02',
+    title: 'AI Governance',
+    description:
+      'As AI becomes central to every business function, the organisations that thrive will be those who deploy it responsibly. We are specialists in building the governance frameworks that make AI trustworthy, auditable, and compliant.',
+    items: [
+      'AI policy & governance framework design',
+      'Risk assessment & bias auditing',
+      'Regulatory compliance (EU AI Act & beyond)',
+      'Ethical AI strategy & advisory',
+      'AI procurement review & due diligence',
+      'Executive & team AI literacy programmes',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Staff Augmentation',
+    description:
+      'The right people, at the right time. We provide highly skilled technology professionals on a flexible, scalable basis — taking the friction out of hiring and letting organisations move faster.',
+    items: [
+      'Software engineers & architects',
+      'AI/ML engineers & data scientists',
+      'Product managers & delivery leads',
+      'QA engineers & DevOps specialists',
+      'Short, mid & long-term engagements',
+      'Global talent network, remote-first ready',
+    ],
+  },
+];
+
+const STAFF_AUG_FEATURES = [
+  { title: 'Rapid Deployment', desc: 'We move quickly. From requirement brief to first day on-site or remote, our screening and placement process is streamlined.' },
+  { title: 'Vetted Senior Talent', desc: 'Every professional in our network has been rigorously assessed — technically and culturally. We place talent, not just bodies.' },
+  { title: 'Flexible Contracts', desc: 'From a two-week sprint to a multi-year programme, our engagement models are built around your reality, not ours.' },
+];
+
+const APPROACH_STEPS = [
+  { num: '01', title: 'Discover', subtitle: 'Understand before we build', desc: 'Every engagement begins with deep discovery. We invest time understanding your business context, competitive landscape, and success metrics.' },
+  { num: '02', title: 'Design', subtitle: 'Architecture with intention', desc: 'Whether designing a product, a governance framework, or an augmentation structure, we approach every decision with clarity and rigour.' },
+  { num: '03', title: 'Deliver', subtitle: 'Execution without compromise', desc: 'We deliver — on time, on brief, and to a standard we are proud of. Our teams communicate proactively and operate with ownership.' },
+  { num: '04', title: 'Govern', subtitle: 'Oversight that enables', desc: 'Good governance is not bureaucracy — it is the structure that lets organisations move with confidence and visibility.' },
+  { num: '05', title: 'Evolve', subtitle: 'Partnerships that last', desc: 'Technology and business never stand still, and neither do we. Our engagements are designed to evolve as your needs evolve.' },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+
+      {/* SERVICES */}
+      <section id="services" className="bg-white py-28 px-[5%]">
+        <div className="max-w-7xl mx-auto mb-20 pb-12 border-b border-rule">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-8">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-px bg-accent-warm"></div>
+                <span className="text-xs font-medium tracking-widest uppercase text-ink-light">What We Do</span>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <h2 className="font-serif text-5xl font-light leading-tight mb-6">Our Services</h2>
+              <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl">
+                From conception to deployment and beyond — Anthology delivers integrated technology services that let organisations build faster, scale smarter, and operate with confidence.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-rule">
+          {SERVICES.map((service) => (
+            <ServiceCard key={service.number} {...service} />
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* STAFF AUGMENTATION */}
+      <section className="bg-paper py-28 px-[5%]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-px bg-accent-warm"></div>
+                <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Staff Augmentation</span>
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <h2 className="font-serif text-5xl font-light leading-tight mb-6">The right talent, when you need it</h2>
+              <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl">
+                Anthology's staff augmentation practice connects organisations with vetted, senior-level technology professionals. We handle screening, vetting, placement, and ongoing support.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {STAFF_AUG_FEATURES.map((feature) => (
+              <div key={feature.title}>
+                <h3 className="font-serif text-2xl font-normal mb-4">{feature.title}</h3>
+                <p className="text-sm font-light leading-relaxed text-ink-mid">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI GOVERNANCE SPECIALIZATION */}
+      <section id="ai-governance" className="bg-white py-28 px-[5%]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-px bg-accent-warm"></div>
+              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Specialisation</span>
+            </div>
+            <h2 className="font-serif text-5xl font-light leading-tight">
+              AI Governance for the <em className="italic font-normal">next decade</em>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 pb-12 border-b border-rule">
+            <div>
+              <h3 className="font-serif text-xl font-normal mb-4">Policy & Framework Design</h3>
+              <p className="text-sm font-light leading-relaxed text-ink-mid">
+                Custom AI governance policies built around your industry, risk appetite, and regulatory environment.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl font-normal mb-4">Auditing & Risk Assessment</h3>
+              <p className="text-sm font-light leading-relaxed text-ink-mid">
+                Systematic reviews of AI systems for bias, fairness, reliability, and accountability. Clear findings, clear recommendations.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl font-normal mb-4">Regulatory Compliance</h3>
+              <p className="text-sm font-light leading-relaxed text-ink-mid">
+                Preparation for EU AI Act obligations, sector-specific regulations, and emerging international frameworks.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl font-normal mb-4">Executive Advisory</h3>
+              <p className="text-sm font-light leading-relaxed text-ink-mid">
+                Board-level and C-suite guidance on responsible AI adoption — from procurement decisions to public disclosure.
+              </p>
+            </div>
+          </div>
+
+          <blockquote className="font-serif text-2xl italic font-light leading-tight text-ink max-w-3xl">
+            "Responsible AI is not a constraint on innovation — it is the foundation on which lasting innovation is built."
+          </blockquote>
+        </div>
+      </section>
+
+      {/* APPROACH */}
+      <section id="approach" className="bg-paper py-28 px-[5%]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-px bg-accent-warm"></div>
+              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">How We Work</span>
+            </div>
+            <h2 className="font-serif text-5xl font-light leading-tight">Our Approach</h2>
+            <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mt-8">
+              We operate with the discipline of a consultancy and the directness of a partner. No jargon, no over-engineering, no surprises.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {APPROACH_STEPS.map((step) => (
+              <div key={step.num}>
+                <span className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-4">
+                  {step.num} — {step.subtitle}
+                </span>
+                <h3 className="font-serif text-xl font-normal mb-4">{step.title}</h3>
+                <p className="text-xs font-light leading-relaxed text-ink-mid">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="bg-white py-28 px-[5%]">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <h2 className="font-serif text-5xl font-light leading-tight mb-6">Let's build something together.</h2>
+            <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl">
+              Whether you are exploring a specific service or simply want to understand how Anthology might be relevant to your organisation, we'd like to hear from you.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Phone</h3>
+              <a href="tel:+12142147474" className="text-base font-normal hover:text-accent-warm transition">
+                +1 (214) 214-7474
+              </a>
+            </div>
+            <div>
+              <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Website</h3>
+              <a href="https://www.anthology.ooo" className="text-base font-normal hover:text-accent-warm transition">
+                www.anthology.ooo
+              </a>
+            </div>
+          </div>
+
+          <div className="mb-8 pb-8 border-t border-rule">
+            <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-2">Registered</h3>
+            <p className="text-base font-normal text-ink">
+              Anthology Solutions Inc. — Irving, Texas, USA
+            </p>
+          </div>
+
+          <ContactForm />
+        </div>
+      </section>
+    </>
   );
 }
