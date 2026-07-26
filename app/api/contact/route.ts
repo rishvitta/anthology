@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify({
           sender: {
             name: 'Anthology Contact Form',
-            email: 'noreply@anthology.ooo',
+            email: 'rish@anthology.ooo',
           },
           to: [
             {
