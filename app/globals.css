@@ -3,15 +3,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Design System Colors */
+  /* Design System Colors - Elegant Professional Palette */
   --ink: #1a1916;
   --ink-mid: #4a4840;
   --ink-light: #8a8880;
-  --paper: #f5f3ef;
-  --paper-dark: #ede9e2;
+  --paper: #faf8f5;
+  --paper-dark: #f0ede7;
   --paper-mid: #e8e4dc;
-  --rule: #d4d0c8;
-  --accent-warm: #b5460f;
+  --rule: #ddd9d0;
+  --accent-primary: #1e4d7b;
+  --accent-secondary: #8b7355;
+  --accent-tertiary: #6b8e7f;
+  --accent-warm: #c9a469;
   --white: #ffffff;
 }
 
@@ -25,6 +28,9 @@
   --color-paper-dark: var(--paper-dark);
   --color-paper-mid: var(--paper-mid);
   --color-rule: var(--rule);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
   --color-accent-warm: var(--accent-warm);
   --color-white: var(--white);
 }

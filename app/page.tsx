@@ -100,7 +100,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-8">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-px bg-accent-warm"></div>
+                <div className="w-10 h-px bg-accent-primary"></div>
                 <span className="text-xs font-medium tracking-widest uppercase text-ink-light">What We Do</span>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-px bg-accent-warm"></div>
+                <div className="w-10 h-px bg-accent-primary"></div>
                 <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Staff Augmentation</span>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-warm"></div>
+              <div className="w-10 h-px bg-accent-primary"></div>
               <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Specialisation</span>
             </div>
             <h2 className="font-serif text-5xl font-light leading-tight">
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-warm"></div>
+              <div className="w-10 h-px bg-accent-primary"></div>
               <span className="text-xs font-medium tracking-widest uppercase text-ink-light">How We Work</span>
             </div>
             <h2 className="font-serif text-5xl font-light leading-tight">Our Approach</h2>
@@ -211,8 +211,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {APPROACH_STEPS.map((step) => (
-              <div key={step.num}>
-                <span className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-4">
+              <div key={step.num} className="p-6 border border-rule rounded-lg hover:border-accent-primary hover:bg-paper-dark transition-all duration-300">
+                <span className="text-xs font-medium tracking-widest uppercase text-accent-primary block mb-4">
                   {step.num} — {step.subtitle}
                 </span>
                 <h3 className="font-serif text-xl font-normal mb-4">{step.title}</h3>
@@ -228,7 +228,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 pb-12 border-b border-rule">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-warm"></div>
+              <div className="w-10 h-px bg-accent-primary"></div>
               <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Clients</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
@@ -239,7 +239,7 @@ export default function Home() {
                 <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mb-4">
                   Anthology has partnered with innovative healthcare, pharmaceutical, and government organizations to deliver transformative technology solutions and strategic advisory services.
                 </p>
-                <a href="/clients" className="text-sm font-medium text-accent-warm hover:text-accent-warm/80 transition inline-block">
+                <a href="/clients" className="text-sm font-medium text-accent-warm hover:text-accent-primary/80 transition inline-block">
                   View all clients →
                 </a>
               </div>
@@ -267,13 +267,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div>
               <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Phone</h3>
-              <a href="tel:+12142147474" className="text-base font-normal hover:text-accent-warm transition">
+              <a href="tel:+12142147474" className="text-base font-normal hover:text-accent-primary transition">
                 +1 (214) 214-7474
               </a>
             </div>
             <div>
               <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Website</h3>
-              <a href="https://www.anthology.ooo" className="text-base font-normal hover:text-accent-warm transition">
+              <a href="https://www.anthology.ooo" className="text-base font-normal hover:text-accent-primary transition">
                 www.anthology.ooo
               </a>
             </div>

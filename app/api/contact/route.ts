@@ -42,12 +42,12 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify({
           sender: {
             name: 'Anthology Contact Form',
-            email: 'rish@anthology.ooo',
+            email: 'info@anthology.ooo',
           },
           to: [
             {
               name: 'Rish',
-              email: 'rish@anthology.ooo',
+              email: 'info@anthology.ooo',
             },
           ],
           subject: `New Contact Submission from ${fullName}`,

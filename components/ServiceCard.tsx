@@ -11,7 +11,7 @@ export default function ServiceCard({ number, title, description, items }: Servi
   return (
     <div className="p-12 border-r border-b border-rule hover:bg-paper transition-colors relative group cursor-default last:border-r-0">
       {/* Hover underline animation */}
-      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-warm group-hover:w-full transition-all duration-500"></div>
+      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-primary group-hover:w-full transition-all duration-500"></div>
 
       <span className="font-serif text-5xl font-light text-rule block mb-7 leading-none">
         {number}
@@ -28,7 +28,7 @@ export default function ServiceCard({ number, title, description, items }: Servi
       <ul className="space-y-2">
         {items.map((item, idx) => (
           <li key={idx} className="text-xs font-normal tracking-wide text-ink-mid flex items-start gap-2.4">
-            <span className="text-accent-warm flex-shrink-0 mt-1">—</span>
+            <span className="text-accent-primary flex-shrink-0 mt-1">—</span>
             <span>{item}</span>
           </li>
         ))}

@@ -9,7 +9,7 @@ interface ClientCardProps {
 
 export default function ClientCard({ name, description, industry, logoUrl }: ClientCardProps) {
   return (
-    <div className="flex flex-col items-center text-center p-8 border border-rule hover:border-accent-warm hover:bg-paper transition-all duration-300">
+    <div className="flex flex-col items-center text-center p-8 border border-rule rounded-xl hover:border-accent-primary hover:bg-paper-dark hover:shadow-lg transition-all duration-300">
       {logoUrl ? (
         <div className="mb-6 h-24 flex items-center justify-center">
           <img

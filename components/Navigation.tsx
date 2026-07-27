@@ -14,12 +14,12 @@ export default function Navigation() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-10">
-        <ul className="flex items-center gap-10 list-none">
+      <div className="hidden md:flex items-center gap-12">
+        <ul className="flex items-center gap-12 list-none">
           <li>
             <a
               href="#services"
-              className="text-xs font-normal tracking-wide text-ink-mid transition-colors hover:text-ink"
+              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
             >
               Services
             </a>
@@ -27,7 +27,7 @@ export default function Navigation() {
           <li>
             <a
               href="#ai-governance"
-              className="text-xs font-normal tracking-wide text-ink-mid transition-colors hover:text-ink"
+              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
             >
               AI Governance
             </a>
@@ -35,7 +35,7 @@ export default function Navigation() {
           <li>
             <a
               href="#approach"
-              className="text-xs font-normal tracking-wide text-ink-mid transition-colors hover:text-ink"
+              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
             >
               Our Approach
             </a>
@@ -43,7 +43,7 @@ export default function Navigation() {
           <li>
             <Link
               href="/products"
-              className="text-xs font-normal tracking-wide text-ink-mid transition-colors hover:text-ink"
+              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
             >
               Products
             </Link>
