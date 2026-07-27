@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
+import ClientCard from '@/components/ClientCard';
 import ContactForm from '@/components/ContactForm';
 
 const SERVICES = [
@@ -59,6 +60,33 @@ const APPROACH_STEPS = [
   { num: '03', title: 'Deliver', subtitle: 'Execution without compromise', desc: 'We deliver — on time, on brief, and to a standard we are proud of. Our teams communicate proactively and operate with ownership.' },
   { num: '04', title: 'Govern', subtitle: 'Oversight that enables', desc: 'Good governance is not bureaucracy — it is the structure that lets organisations move with confidence and visibility.' },
   { num: '05', title: 'Evolve', subtitle: 'Partnerships that last', desc: 'Technology and business never stand still, and neither do we. Our engagements are designed to evolve as your needs evolve.' },
+];
+
+const FEATURED_CLIENTS = [
+  {
+    name: 'CVS Health',
+    industry: 'Healthcare',
+    description: 'Largest pharmacy health care provider in the US',
+    logoUrl: 'https://www.cvshealth.com/favicon.ico',
+  },
+  {
+    name: 'Catalent Pharmaceuticals',
+    industry: 'Pharmaceutical',
+    description: 'Leading pharmaceutical and CDMO services provider',
+    logoUrl: 'https://www.catalent.com/favicon.ico',
+  },
+  {
+    name: 'Solventum',
+    industry: 'Healthcare Technology',
+    description: 'Global healthcare company with AI-powered solutions',
+    logoUrl: 'https://www.solventum.com/favicon.ico',
+  },
+  {
+    name: 'HAVCOG',
+    industry: 'Non-Profit Healthcare',
+    description: 'Community health center network across US',
+    logoUrl: 'https://www.havcog.org/favicon.ico',
+  },
 ];
 
 export default function Home() {
@@ -190,6 +218,37 @@ export default function Home() {
                 <h3 className="font-serif text-xl font-normal mb-4">{step.title}</h3>
                 <p className="text-xs font-light leading-relaxed text-ink-mid">{step.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED CLIENTS */}
+      <section className="bg-white py-28 px-[5%]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 pb-12 border-b border-rule">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-px bg-accent-warm"></div>
+              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Clients</span>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+              <div>
+                <h2 className="font-serif text-5xl font-light leading-tight mb-4">Trusted partners</h2>
+              </div>
+              <div className="lg:col-span-2">
+                <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mb-4">
+                  Anthology has partnered with innovative healthcare, pharmaceutical, and government organizations to deliver transformative technology solutions and strategic advisory services.
+                </p>
+                <a href="/clients" className="text-sm font-medium text-accent-warm hover:text-accent-warm/80 transition inline-block">
+                  View all clients →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {FEATURED_CLIENTS.map((client) => (
+              <ClientCard key={client.name} {...client} />
             ))}
           </div>
         </div>

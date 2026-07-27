@@ -29,19 +29,19 @@ export default function Footer() {
             <h3 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#services" className="text-sm text-paper hover:text-white transition">
                   Product Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#ai-governance" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#ai-governance" className="text-sm text-paper hover:text-white transition">
                   AI Governance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#services" className="text-sm text-paper hover:text-white transition">
                   Staff Augmentation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,19 +51,24 @@ export default function Footer() {
             <h3 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#approach" className="text-sm text-paper hover:text-white transition">
+                <Link href="/products" className="text-sm text-paper hover:text-white transition">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link href="/clients" className="text-sm text-paper hover:text-white transition">
+                  Clients
+                </Link>
+              </li>
+              <li>
+                <Link href="/#approach" className="text-sm text-paper hover:text-white transition">
                   Our Approach
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#contact" className="text-sm text-paper hover:text-white transition">
                   Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="https://www.anthology.ooo" className="text-sm text-paper hover:text-white transition">
-                  anthology.ooo
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
