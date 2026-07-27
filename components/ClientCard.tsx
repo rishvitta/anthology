@@ -10,17 +10,16 @@ interface ClientCardProps {
 export default function ClientCard({ name, description, industry, logoUrl }: ClientCardProps) {
   return (
     <div className="flex flex-col items-center text-center p-8 border border-rule rounded-xl hover:border-accent-primary hover:bg-paper-dark hover:shadow-lg transition-all duration-300">
-      {logoUrl ? (
+      {logoUrl && (
         <div className="mb-6 h-24 flex items-center justify-center">
           <img
             src={logoUrl}
             alt={`${name} logo`}
             className="max-h-24 max-w-full object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
           />
-        </div>
-      ) : (
-        <div className="mb-6 h-24 flex items-center justify-center bg-paper-dark rounded">
-          <span className="text-ink-light text-sm">Logo</span>
         </div>
       )}
       <h3 className="font-serif text-xl font-normal mb-2 text-ink">{name}</h3>

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     "Anthology Solutions Inc. specialises in Product Development, AI Governance, and Staff Augmentation — helping organisations build, govern, and scale intelligent technology.",
   keywords: ["technology", "ai", "governance", "product development", "staff augmentation"],
   authors: [{ name: "Anthology Solutions Inc." }],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Anthology Solutions Inc.",
     description:

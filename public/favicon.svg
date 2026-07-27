@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .bg { fill: #1a1916; }
+      .text { fill: #c9a469; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 60px; font-weight: 300; letter-spacing: 2px; }
+      .accent { fill: #1e4d7b; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect class="bg" width="100" height="100"/>
+  <!-- Accent bar -->
+  <rect class="accent" x="8" y="45" width="4" height="20"/>
+  <!-- Letter A -->
+  <text class="text" x="20" y="70" letter-spacing="1">A</text>
+</svg>

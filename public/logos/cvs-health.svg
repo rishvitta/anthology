@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .text { fill: #e31937; font-family: Arial, sans-serif; font-size: 48px; font-weight: bold; }
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200"/>
+  <text class="text" x="50" y="120">CVS</text>
+</svg>

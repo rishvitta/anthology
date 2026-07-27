@@ -67,25 +67,25 @@ const FEATURED_CLIENTS = [
     name: 'CVS Health',
     industry: 'Healthcare',
     description: 'Largest pharmacy health care provider in the US',
-    logoUrl: 'https://www.cvshealth.com/favicon.ico',
+    logoUrl: '/logos/cvs-health.svg',
   },
   {
     name: 'Catalent Pharmaceuticals',
     industry: 'Pharmaceutical',
     description: 'Leading pharmaceutical and CDMO services provider',
-    logoUrl: 'https://www.catalent.com/favicon.ico',
+    logoUrl: '/logos/catalent.svg',
   },
   {
     name: 'Solventum',
     industry: 'Healthcare Technology',
     description: 'Global healthcare company with AI-powered solutions',
-    logoUrl: 'https://www.solventum.com/favicon.ico',
+    logoUrl: '/logos/solventum.svg',
   },
   {
     name: 'HAVCOG',
     industry: 'Non-Profit Healthcare',
     description: 'Community health center network across US',
-    logoUrl: 'https://www.havcog.org/favicon.ico',
+    logoUrl: '/logos/havcog.svg',
   },
 ];
 

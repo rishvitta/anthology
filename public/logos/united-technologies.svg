@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .text { fill: #003f87; font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; }
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200"/>
+  <text class="text" x="5" y="110">United</text>
+  <text class="text" x="5" y="140">Technologies</text>
+</svg>
