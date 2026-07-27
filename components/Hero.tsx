@@ -6,20 +6,18 @@ export default function Hero() {
       {/* Left Side */}
       <div className="w-full lg:w-1/2 bg-paper px-[6%] py-[10vh] flex flex-col justify-center border-r border-rule relative">
         {/* Accent bar */}
-        <div className="absolute left-0 top-[15%] bottom-[15%] w-0.75 bg-accent-warm"></div>
+        <div className="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-accent-soft via-accent to-accent-deep"></div>
 
         <div className="mb-10 flex items-center gap-4">
-          <div className="w-10 h-px bg-accent-warm"></div>
-          <span className="text-xs font-medium tracking-widest uppercase text-ink-light">
-            Anthology Solutions Inc.
-          </span>
+          <div className="rule-accent"></div>
+          <span className="eyebrow">Anthology Solutions Inc.</span>
         </div>
 
-        <h1 className="font-serif text-5xl lg:text-6xl font-light leading-tight mb-10 text-ink">
+        <h1 className="display text-5xl lg:text-7xl mb-10 text-ink">
           Technology{' '}
-          <strong className="font-semibold italic block">Governed.</strong>
+          <strong className="font-medium italic block text-accent">Governed.</strong>
           <span>Intelligence</span>
-          <strong className="font-semibold italic block">Applied.</strong>
+          <strong className="font-medium italic block text-accent">Applied.</strong>
         </h1>
 
         <p className="text-base font-light leading-relaxed text-ink-mid max-w-md mb-12">
@@ -28,16 +26,10 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
-          <a
-            href="#services"
-            className="text-xs font-medium tracking-widest uppercase text-white bg-ink px-9 py-4 transition-all hover:bg-ink-mid hover:translate-y-[-2px]"
-          >
+          <a href="#services" className="btn btn-primary">
             Explore Services
           </a>
-          <a
-            href="#contact"
-            className="text-xs font-medium tracking-widest uppercase text-ink border-b border-rule px-0 pb-0.5 transition-all hover:border-accent-warm hover:text-accent-warm"
-          >
+          <a href="#contact" className="eyebrow link-quiet !text-ink hover:!text-accent">
             Start a Conversation
           </a>
         </div>
@@ -57,11 +49,14 @@ export default function Hero() {
             { label: 'AI Governance', number: '02' },
             { label: 'Staff Augmentation', number: '03' },
           ].map((stat) => (
-            <div key={stat.number} className="py-7 border-t border-white/10 flex items-baseline gap-5">
-              <span className="font-serif text-4xl font-light text-paper leading-none min-w-fit">
+            <div
+              key={stat.number}
+              className="py-7 border-t border-white/10 flex items-baseline gap-5 group transition-colors hover:border-accent/50"
+            >
+              <span className="font-serif text-4xl font-light text-accent-soft leading-none min-w-fit">
                 {stat.number}
               </span>
-              <span className="text-xs font-normal tracking-widest uppercase text-paper/40">
+              <span className="text-xs font-normal tracking-[0.22em] uppercase text-paper/45 transition-colors group-hover:text-paper/80">
                 {stat.label}
               </span>
             </div>

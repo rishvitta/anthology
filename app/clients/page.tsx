@@ -54,16 +54,16 @@ export default function ClientsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-ink text-paper py-24 px-[5%]">
+      <section className="bg-ink text-paper pt-40 pb-28 px-[5%]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-warm"></div>
-              <span className="text-xs font-medium tracking-widest uppercase text-paper/70">Our Clients</span>
+              <div className="rule-accent"></div>
+              <span className="eyebrow">Our Clients</span>
             </div>
           </div>
-          <h1 className="font-serif text-6xl font-light leading-tight mb-6 max-w-3xl">
-            Trusted by leading organizations
+          <h1 className="display text-5xl lg:text-7xl mb-6 max-w-3xl">
+            Trusted by <em className="italic font-normal text-accent-soft">leading</em> organizations
           </h1>
           <p className="text-lg font-light leading-relaxed text-paper/80 max-w-2xl">
             Anthology has partnered with innovative healthcare, pharmaceutical, and government organizations to deliver transformative technology solutions and strategic advisory services.
@@ -72,7 +72,7 @@ export default function ClientsPage() {
       </section>
 
       {/* CLIENTS GRID */}
-      <section className="bg-white py-28 px-[5%]">
+      <section className="bg-paper py-28 px-[5%]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {CLIENTS.map((client) => (
@@ -83,18 +83,15 @@ export default function ClientsPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-paper py-24 px-[5%]">
+      <section className="bg-paper-dark py-24 px-[5%]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-light leading-tight mb-6">
+          <h2 className="display text-4xl lg:text-5xl mb-6">
             Ready to partner with Anthology?
           </h2>
           <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mx-auto mb-8">
             Whether you're looking to transform a product, establish AI governance, or augment your team with specialized talent, we'd like to hear from you.
           </p>
-          <a
-            href="/#contact"
-            className="inline-block px-8 py-4 bg-ink text-paper font-medium text-sm tracking-wide hover:bg-accent-warm transition"
-          >
+          <a href="/#contact" className="btn btn-primary">
             Get in Touch
           </a>
         </div>

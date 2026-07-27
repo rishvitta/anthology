@@ -8,9 +8,12 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-100 h-16 flex items-center justify-between px-[5%] bg-paper/95 backdrop-blur-md border-b border-rule">
-      <Link href="/" className="text-xs font-semibold tracking-widest uppercase text-ink">
-        Anthology
+    <nav className="fixed top-0 left-0 right-0 z-100 h-20 flex items-center justify-between px-[5%] bg-paper/90 backdrop-blur-xl border-b border-rule/70">
+      <Link
+        href="/"
+        className="font-serif text-2xl font-semibold tracking-[0.22em] uppercase text-ink transition-colors hover:text-accent"
+      >
+        Anthol<span className="text-accent">o</span>gy
       </Link>
 
       {/* Desktop Navigation */}
@@ -19,7 +22,7 @@ export default function Navigation() {
           <li>
             <a
               href="#services"
-              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               Services
             </a>
@@ -27,7 +30,7 @@ export default function Navigation() {
           <li>
             <a
               href="#ai-governance"
-              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               AI Governance
             </a>
@@ -35,7 +38,7 @@ export default function Navigation() {
           <li>
             <a
               href="#approach"
-              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               Our Approach
             </a>
@@ -43,19 +46,24 @@ export default function Navigation() {
           <li>
             <Link
               href="/products"
-              className="text-sm font-normal tracking-wide text-ink-mid transition-colors hover:text-accent-primary hover:font-medium"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               Products
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/clients"
+              className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
+            >
+              Clients
             </Link>
           </li>
         </ul>
       </div>
 
       <div className="hidden md:block">
-        <a
-          href="#contact"
-          className="text-xs font-medium tracking-widest uppercase text-white bg-ink px-5.5 py-2.4 transition-all hover:bg-ink-mid hover:translate-y-[-2px]"
-        >
+        <a href="#contact" className="btn btn-accent !px-7 !py-3">
           Get in Touch
         </a>
       </div>
@@ -71,7 +79,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-paper border-b border-rule md:hidden">
+        <div className="absolute top-20 left-0 right-0 bg-paper border-b border-rule shadow-lg md:hidden">
           <ul className="flex flex-col gap-0 list-none p-4">
             <li>
               <a
@@ -109,10 +117,19 @@ export default function Navigation() {
                 Products
               </Link>
             </li>
-            <li className="pt-2 border-t border-rule">
+            <li>
+              <Link
+                href="/clients"
+                className="block px-4 py-2 text-sm font-normal text-ink-mid hover:text-ink"
+                onClick={() => setIsOpen(false)}
+              >
+                Clients
+              </Link>
+            </li>
+            <li className="pt-4 mt-2 border-t border-rule">
               <a
                 href="#contact"
-                className="block px-4 py-2 text-xs font-medium tracking-widest uppercase text-white bg-ink hover:bg-ink-mid"
+                className="btn btn-accent block text-center"
                 onClick={() => setIsOpen(false)}
               >
                 Get in Touch

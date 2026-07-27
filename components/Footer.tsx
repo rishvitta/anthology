@@ -10,15 +10,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-12 border-b border-white/10">
           {/* Brand */}
           <div>
-            <h3 className="text-sm font-semibold tracking-widest uppercase mb-4">Anthology</h3>
-            <p className="text-sm text-paper/60 italic max-w-xs">
-              "We would like to make your story a part of our Anthology."
+            <h3 className="font-serif text-2xl font-semibold tracking-[0.22em] uppercase mb-5">
+              Anthol<span className="text-accent">o</span>gy
+            </h3>
+            <p className="font-serif text-base text-paper/60 italic max-w-xs leading-relaxed">
+              &ldquo;We would like to make your story a part of our Anthology.&rdquo;
             </p>
             <div className="mt-6 flex flex-col gap-2">
-              <a href="tel:+12142147474" className="text-sm text-paper hover:text-white transition">
+              <a href="tel:+12142147474" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                 +1 (214) 214-7474
               </a>
-              <a href="https://www.anthology.ooo" className="text-sm text-paper hover:text-white transition">
+              <a href="https://www.anthology.ooo" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                 www.anthology.ooo
               </a>
             </div>
@@ -26,20 +28,20 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">Services</h3>
+            <h3 className="eyebrow block mb-5">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/#services" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#services" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Product Development
                 </Link>
               </li>
               <li>
-                <Link href="/#ai-governance" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#ai-governance" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   AI Governance
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#services" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Staff Augmentation
                 </Link>
               </li>
@@ -48,25 +50,25 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">Company</h3>
+            <h3 className="eyebrow block mb-5">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/products" className="text-sm text-paper hover:text-white transition">
+                <Link href="/products" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="/clients" className="text-sm text-paper hover:text-white transition">
+                <Link href="/clients" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Clients
                 </Link>
               </li>
               <li>
-                <Link href="/#approach" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#approach" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Our Approach
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="text-sm text-paper hover:text-white transition">
+                <Link href="/#contact" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Contact Us
                 </Link>
               </li>
@@ -75,15 +77,15 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">Legal</h3>
+            <h3 className="eyebrow block mb-5">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy-policy" className="text-sm text-paper hover:text-white transition">
+                <Link href="/privacy-policy" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms-of-service" className="text-sm text-paper hover:text-white transition">
+                <Link href="/terms-of-service" className="text-sm text-paper/70 hover:text-accent-soft transition-colors">
                   Terms of Service
                 </Link>
               </li>

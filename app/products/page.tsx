@@ -37,25 +37,25 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-[5%] bg-paper">
+      <section className="pt-40 pb-20 px-[5%] bg-ink text-paper">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-warm"></div>
-              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Portfolio</span>
+              <div className="rule-accent"></div>
+              <span className="eyebrow">Our Portfolio</span>
             </div>
-            <h1 className="font-serif text-6xl font-light leading-tight max-w-3xl">
-              Technology products that solve real problems
+            <h1 className="display text-5xl lg:text-7xl max-w-3xl">
+              Technology products that solve <em className="italic font-normal text-accent-soft">real problems</em>
             </h1>
           </div>
-          <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl">
+          <p className="text-base font-light leading-relaxed text-paper/70 max-w-2xl">
             Anthology builds and maintains a portfolio of technology products addressing critical challenges in healthcare and real estate. Each product represents our commitment to thoughtful design, responsible implementation, and continuous innovation.
           </p>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-28 px-[5%] bg-white">
+      <section className="py-28 px-[5%] bg-paper">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PRODUCTS.map((product) => (
@@ -66,18 +66,15 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-28 px-[5%] bg-paper">
+      <section className="py-28 px-[5%] bg-paper-dark">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-light leading-tight mb-6">
+          <h2 className="display text-4xl lg:text-5xl mb-6">
             Interested in our products or services?
           </h2>
           <p className="text-base font-light leading-relaxed text-ink-mid mb-12">
             Learn more about how Anthology can help your organisation build, scale, and govern technology.
           </p>
-          <a
-            href="/#contact"
-            className="inline-block text-xs font-medium tracking-widest uppercase text-white bg-ink px-9 py-4 transition-all hover:bg-ink-mid hover:translate-y-[-2px]"
-          >
+          <a href="/#contact" className="btn btn-primary">
             Get in Touch
           </a>
         </div>

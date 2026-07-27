@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @import "tailwindcss";
 
 :root {
-  /* Design System Colors - Elegant Professional Palette */
-  --ink: #1a1916;
-  --ink-mid: #4a4840;
-  --ink-light: #8a8880;
-  --paper: #faf8f5;
-  --paper-dark: #f0ede7;
-  --paper-mid: #e8e4dc;
-  --rule: #ddd9d0;
-  --accent-primary: #1e4d7b;
-  --accent-secondary: #8b7355;
-  --accent-tertiary: #6b8e7f;
-  --accent-warm: #c9a469;
+  /* ── Neutrals: warm espresso → ivory. Never pure black, never pure white. ── */
+  --ink: #191410;
+  --ink-deep: #221a13;
+  --ink-mid: #5b5147;
+  --ink-light: #928779;
+  --paper: #faf7f2;
+  --paper-dark: #f2ede4;
+  --paper-mid: #e9e2d6;
+  --rule: #ded4c4;
+
+  /* ── Accent: burnished bronze. Deeper and more saturated than champagne. ── */
+  --accent: #a4632c;
+  --accent-soft: #c88b4c;
+  --accent-deep: #7c4820;
+
   --white: #ffffff;
 }
 
@@ -22,16 +25,16 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'DM Sans', sans-serif;
   --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
   --color-ink-mid: var(--ink-mid);
   --color-ink-light: var(--ink-light);
   --color-paper: var(--paper);
   --color-paper-dark: var(--paper-dark);
   --color-paper-mid: var(--paper-mid);
   --color-rule: var(--rule);
-  --color-accent-primary: var(--accent-primary);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-accent-tertiary: var(--accent-tertiary);
-  --color-accent-warm: var(--accent-warm);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
   --color-white: var(--white);
 }
 
@@ -45,6 +48,101 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  @apply scroll-smooth;
+/* ============================================================
+   Shared elegance primitives
+   ============================================================ */
+
+/* Small-caps label above a heading. Wide tracking is what reads as refined. */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Hairline rule that pairs with .eyebrow */
+.rule-accent {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Display headings: light serif, tight leading, slight optical tightening */
+.display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 15px 34px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(164, 99, 44, 0.55);
+}
+.btn-accent {
+  background: var(--accent);
+  color: var(--paper);
+  border: 1px solid var(--accent);
+}
+.btn-accent:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(164, 99, 44, 0.55);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── Cards: soft edges, accent-tinted lift on hover ── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+  border-color: var(--accent-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px -22px rgba(124, 72, 32, 0.38);
+}
+
+/* Underlined text link that fills with accent on hover */
+.link-quiet {
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: all 0.25s;
+}
+.link-quiet:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }

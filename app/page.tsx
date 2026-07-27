@@ -95,13 +95,13 @@ export default function Home() {
       <Hero />
 
       {/* SERVICES */}
-      <section id="services" className="bg-white py-28 px-[5%]">
+      <section id="services" className="bg-paper py-28 px-[5%]">
         <div className="max-w-7xl mx-auto mb-20 pb-12 border-b border-rule">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-8">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-px bg-accent-primary"></div>
-                <span className="text-xs font-medium tracking-widest uppercase text-ink-light">What We Do</span>
+                <div className="rule-accent"></div>
+                <span className="eyebrow">What We Do</span>
               </div>
             </div>
             <div className="lg:col-span-2">
@@ -121,13 +121,13 @@ export default function Home() {
       </section>
 
       {/* STAFF AUGMENTATION */}
-      <section className="bg-paper py-28 px-[5%]">
+      <section className="bg-paper-dark py-28 px-[5%]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-px bg-accent-primary"></div>
-                <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Staff Augmentation</span>
+                <div className="rule-accent"></div>
+                <span className="eyebrow">Staff Augmentation</span>
               </div>
             </div>
             <div className="lg:col-span-2">
@@ -150,47 +150,47 @@ export default function Home() {
       </section>
 
       {/* AI GOVERNANCE SPECIALIZATION */}
-      <section id="ai-governance" className="bg-white py-28 px-[5%]">
+      <section id="ai-governance" className="bg-ink text-paper py-32 px-[5%]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-primary"></div>
-              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Specialisation</span>
+              <div className="rule-accent"></div>
+              <span className="eyebrow">Our Specialisation</span>
             </div>
-            <h2 className="font-serif text-5xl font-light leading-tight">
-              AI Governance for the <em className="italic font-normal">next decade</em>
+            <h2 className="display text-5xl lg:text-6xl max-w-3xl">
+              AI Governance for the <em className="italic font-normal text-accent-soft">next decade</em>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 pb-12 border-b border-rule">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 mb-16 pb-16 border-b border-white/10">
             <div>
-              <h3 className="font-serif text-xl font-normal mb-4">Policy & Framework Design</h3>
-              <p className="text-sm font-light leading-relaxed text-ink-mid">
+              <h3 className="font-serif text-2xl font-normal mb-4 text-paper">Policy &amp; Framework Design</h3>
+              <p className="text-sm font-light leading-relaxed text-paper/60">
                 Custom AI governance policies built around your industry, risk appetite, and regulatory environment.
               </p>
             </div>
             <div>
-              <h3 className="font-serif text-xl font-normal mb-4">Auditing & Risk Assessment</h3>
-              <p className="text-sm font-light leading-relaxed text-ink-mid">
+              <h3 className="font-serif text-2xl font-normal mb-4 text-paper">Auditing &amp; Risk Assessment</h3>
+              <p className="text-sm font-light leading-relaxed text-paper/60">
                 Systematic reviews of AI systems for bias, fairness, reliability, and accountability. Clear findings, clear recommendations.
               </p>
             </div>
             <div>
-              <h3 className="font-serif text-xl font-normal mb-4">Regulatory Compliance</h3>
-              <p className="text-sm font-light leading-relaxed text-ink-mid">
+              <h3 className="font-serif text-2xl font-normal mb-4 text-paper">Regulatory Compliance</h3>
+              <p className="text-sm font-light leading-relaxed text-paper/60">
                 Preparation for EU AI Act obligations, sector-specific regulations, and emerging international frameworks.
               </p>
             </div>
             <div>
-              <h3 className="font-serif text-xl font-normal mb-4">Executive Advisory</h3>
-              <p className="text-sm font-light leading-relaxed text-ink-mid">
+              <h3 className="font-serif text-2xl font-normal mb-4 text-paper">Executive Advisory</h3>
+              <p className="text-sm font-light leading-relaxed text-paper/60">
                 Board-level and C-suite guidance on responsible AI adoption — from procurement decisions to public disclosure.
               </p>
             </div>
           </div>
 
-          <blockquote className="font-serif text-2xl italic font-light leading-tight text-ink max-w-3xl">
-            "Responsible AI is not a constraint on innovation — it is the foundation on which lasting innovation is built."
+          <blockquote className="font-serif text-3xl italic font-light leading-snug text-paper/85 max-w-3xl">
+            &ldquo;Responsible AI is not a constraint on innovation — it is the foundation on which lasting innovation is built.&rdquo;
           </blockquote>
         </div>
       </section>
@@ -200,8 +200,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-primary"></div>
-              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">How We Work</span>
+              <div className="rule-accent"></div>
+              <span className="eyebrow">How We Work</span>
             </div>
             <h2 className="font-serif text-5xl font-light leading-tight">Our Approach</h2>
             <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mt-8">
@@ -211,8 +211,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {APPROACH_STEPS.map((step) => (
-              <div key={step.num} className="p-6 border border-rule rounded-lg hover:border-accent-primary hover:bg-paper-dark transition-all duration-300">
-                <span className="text-xs font-medium tracking-widest uppercase text-accent-primary block mb-4">
+              <div key={step.num} className="card p-7">
+                <span className="eyebrow block mb-5 leading-relaxed">
                   {step.num} — {step.subtitle}
                 </span>
                 <h3 className="font-serif text-xl font-normal mb-4">{step.title}</h3>
@@ -224,12 +224,12 @@ export default function Home() {
       </section>
 
       {/* FEATURED CLIENTS */}
-      <section className="bg-white py-28 px-[5%]">
+      <section className="bg-paper-dark py-28 px-[5%]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 pb-12 border-b border-rule">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-px bg-accent-primary"></div>
-              <span className="text-xs font-medium tracking-widest uppercase text-ink-light">Our Clients</span>
+              <div className="rule-accent"></div>
+              <span className="eyebrow">Our Clients</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
               <div>
@@ -239,7 +239,7 @@ export default function Home() {
                 <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl mb-4">
                   Anthology has partnered with innovative healthcare, pharmaceutical, and government organizations to deliver transformative technology solutions and strategic advisory services.
                 </p>
-                <a href="/clients" className="text-sm font-medium text-accent-warm hover:text-accent-primary/80 transition inline-block">
+                <a href="/clients" className="eyebrow inline-block border-b border-accent/40 pb-1 hover:border-accent transition">
                   View all clients →
                 </a>
               </div>
@@ -255,10 +255,14 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="bg-white py-28 px-[5%]">
+      <section id="contact" className="bg-paper py-28 px-[5%]">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <h2 className="font-serif text-5xl font-light leading-tight mb-6">Let's build something together.</h2>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="rule-accent"></div>
+              <span className="eyebrow">Get in Touch</span>
+            </div>
+            <h2 className="display text-5xl lg:text-6xl mb-6">Let&rsquo;s build something together.</h2>
             <p className="text-base font-light leading-relaxed text-ink-mid max-w-2xl">
               Whether you are exploring a specific service or simply want to understand how Anthology might be relevant to your organisation, we'd like to hear from you.
             </p>
@@ -266,21 +270,21 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Phone</h3>
-              <a href="tel:+12142147474" className="text-base font-normal hover:text-accent-primary transition">
+              <h3 className="eyebrow block mb-4">Phone</h3>
+              <a href="tel:+12142147474" className="text-base font-normal hover:text-accent transition">
                 +1 (214) 214-7474
               </a>
             </div>
             <div>
-              <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-4">Website</h3>
-              <a href="https://www.anthology.ooo" className="text-base font-normal hover:text-accent-primary transition">
+              <h3 className="eyebrow block mb-4">Website</h3>
+              <a href="https://www.anthology.ooo" className="text-base font-normal hover:text-accent transition">
                 www.anthology.ooo
               </a>
             </div>
           </div>
 
           <div className="mb-8 pb-8 border-t border-rule">
-            <h3 className="text-xs font-medium tracking-widest uppercase text-ink-light mb-2">Registered</h3>
+            <h3 className="eyebrow block mb-2">Registered</h3>
             <p className="text-base font-normal text-ink">
               Anthology Solutions Inc. — Irving, Texas, USA
             </p>

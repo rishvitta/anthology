@@ -54,7 +54,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-paper p-8 text-center">
+      <div className="card p-12 text-center border-accent/40">
         <p className="text-lg font-light text-ink-mid">
           Thank you for reaching out. We'll get back to you soon.
         </p>
@@ -66,7 +66,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="max-w-2xl">
       <div className="space-y-0 border-t border-rule">
         <div className="py-5 border-b border-rule">
-          <label className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-2">
+          <label className="eyebrow block mb-2">
             Full Name
           </label>
           <input
@@ -81,7 +81,7 @@ export default function ContactForm() {
         </div>
 
         <div className="py-5 border-b border-rule">
-          <label className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-2">
+          <label className="eyebrow block mb-2">
             Organisation
           </label>
           <input
@@ -96,7 +96,7 @@ export default function ContactForm() {
         </div>
 
         <div className="py-5 border-b border-rule">
-          <label className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-2">
+          <label className="eyebrow block mb-2">
             Email
           </label>
           <input
@@ -111,7 +111,7 @@ export default function ContactForm() {
         </div>
 
         <div className="py-5 border-b border-rule">
-          <label className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-2">
+          <label className="eyebrow block mb-2">
             Service Interest
           </label>
           <select
@@ -130,7 +130,7 @@ export default function ContactForm() {
         </div>
 
         <div className="py-5 border-b border-rule">
-          <label className="text-xs font-medium tracking-widest uppercase text-ink-light block mb-2">
+          <label className="eyebrow block mb-2">
             Message
           </label>
           <textarea
@@ -147,7 +147,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 w-full text-xs font-medium tracking-widest uppercase text-white bg-ink px-9 py-4 transition-all hover:bg-ink-mid hover:translate-y-[-2px] disabled:opacity-50"
+        className="btn btn-accent mt-10 w-full disabled:opacity-50 disabled:hover:transform-none"
       >
         {loading ? 'Sending...' : 'Send Enquiry'}
       </button>
