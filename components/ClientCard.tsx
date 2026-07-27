@@ -11,11 +11,13 @@ export default function ClientCard({ name, description, industry, logoUrl }: Cli
   return (
     <div className="flex flex-col items-center text-center p-8 border border-rule rounded-xl hover:border-accent-primary hover:bg-paper-dark hover:shadow-lg transition-all duration-300">
       {logoUrl && (
-        <div className="mb-6 h-24 flex items-center justify-center">
+        <div className="mb-6 h-20 w-full flex items-center justify-center">
           <img
             src={logoUrl}
             alt={`${name} logo`}
-            className="max-h-24 max-w-full object-contain"
+            width={160}
+            height={80}
+            className="h-20 w-auto shrink-0 object-contain"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
