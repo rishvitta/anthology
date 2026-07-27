@@ -20,9 +20,9 @@ const CLIENTS = [
     logoUrl: '/logos/solventum.svg',
   },
   {
-    name: 'HAVCOG',
-    industry: 'Non-Profit Healthcare',
-    description: 'Community health center network delivering comprehensive healthcare services to underserved populations across multiple states.',
+    name: 'Heart & Vascular Care of Georgia',
+    industry: 'Cardiovascular Care',
+    description: 'Specialist cardiology practice delivering cardiovascular diagnostics, treatment, and preventative care.',
     logoUrl: '/logos/havcog.svg',
   },
   {

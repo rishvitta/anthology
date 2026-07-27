@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-semibold tracking-[0.22em] uppercase mb-5">
-              Anthol<span className="text-accent">o</span>gy
+              Anth<span className="text-accent">o</span>l<span className="text-accent">o</span>gy
             </h3>
             <p className="font-serif text-base text-paper/60 italic max-w-xs leading-relaxed">
               &ldquo;We would like to make your story a part of our Anthology.&rdquo;

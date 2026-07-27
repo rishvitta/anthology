@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import HashScroll from "@/components/HashScroll";
 
 export const metadata: Metadata = {
   title: "Anthology Solutions Inc. — Technology. Governed. Intelligence. Applied.",
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col bg-paper text-ink">
+        <HashScroll />
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />

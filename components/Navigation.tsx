@@ -13,7 +13,7 @@ export default function Navigation() {
         href="/"
         className="font-serif text-2xl font-semibold tracking-[0.22em] uppercase text-ink transition-colors hover:text-accent"
       >
-        Anthol<span className="text-accent">o</span>gy
+        Anth<span className="text-accent">o</span>l<span className="text-accent">o</span>gy
       </Link>
 
       {/* Desktop Navigation */}
@@ -21,7 +21,7 @@ export default function Navigation() {
         <ul className="flex items-center gap-12 list-none">
           <li>
             <a
-              href="#services"
+              href="/#services"
               className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               Services
@@ -29,7 +29,7 @@ export default function Navigation() {
           </li>
           <li>
             <a
-              href="#ai-governance"
+              href="/#ai-governance"
               className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               AI Governance
@@ -37,7 +37,7 @@ export default function Navigation() {
           </li>
           <li>
             <a
-              href="#approach"
+              href="/#approach"
               className="text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid transition-colors hover:text-accent"
             >
               Our Approach
@@ -63,7 +63,7 @@ export default function Navigation() {
       </div>
 
       <div className="hidden md:block">
-        <a href="#contact" className="btn btn-accent !px-7 !py-3">
+        <a href="/#contact" className="btn btn-accent !px-7 !py-3">
           Get in Touch
         </a>
       </div>
@@ -83,7 +83,7 @@ export default function Navigation() {
           <ul className="flex flex-col gap-0 list-none p-4">
             <li>
               <a
-                href="#services"
+                href="/#services"
                 className="block px-4 py-2 text-sm font-normal text-ink-mid hover:text-ink"
                 onClick={() => setIsOpen(false)}
               >
@@ -92,7 +92,7 @@ export default function Navigation() {
             </li>
             <li>
               <a
-                href="#ai-governance"
+                href="/#ai-governance"
                 className="block px-4 py-2 text-sm font-normal text-ink-mid hover:text-ink"
                 onClick={() => setIsOpen(false)}
               >
@@ -101,7 +101,7 @@ export default function Navigation() {
             </li>
             <li>
               <a
-                href="#approach"
+                href="/#approach"
                 className="block px-4 py-2 text-sm font-normal text-ink-mid hover:text-ink"
                 onClick={() => setIsOpen(false)}
               >
@@ -128,7 +128,7 @@ export default function Navigation() {
             </li>
             <li className="pt-4 mt-2 border-t border-rule">
               <a
-                href="#contact"
+                href="/#contact"
                 className="btn btn-accent block text-center"
                 onClick={() => setIsOpen(false)}
               >
